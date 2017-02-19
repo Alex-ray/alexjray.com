@@ -2,6 +2,9 @@ import React, {Component, PropTypes} from 'react';
 import {Router} from 'react-router';
 import routes from '../universal/routes/index';
 
+// Global CSS
+import 'universal/styles/global.less';
+
 
 class Root extends Component {
   static propTypes = {

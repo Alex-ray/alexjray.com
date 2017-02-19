@@ -11,6 +11,13 @@ const universalSrc = path.join(src, 'universal');
 
 const clientInclude = [clientSrc, universalSrc];
 
+const cssLoaderConfig  = {
+  modules: true,
+  importLoaders: 1,
+  localIdentName: '[name]_[local]_[hash:base64:5]'
+};
+
+
 const babelQuery = {
   "env": {
      "development": {
@@ -71,13 +78,14 @@ export default {
 
       // CSS
       {
-       test: /\.css$/,
+       test: /\.(css|less)$/,
        include: clientInclude,
-       loader: 'style-loader!css-loader?' + qs.stringify({
-         modules: true,
-         importLoaders: 1,
-         localIdentName: '[path][name]-[local]'
-       })
+       loaders: [
+         'style-loader',
+         'css-loader?' + qs.stringify(cssLoaderConfig),
+         'postcss-loader',
+         'less-loader'
+       ]
      }
     ]
   }
