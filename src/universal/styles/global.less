@@ -1,16 +1,14 @@
-@import './typography.less';
-
+@import '~universal/styles/variables.less';
+@import '~universal/styles/typography.less';
 
 html, body {
-  font-family: @body-font-family;
+  margin: 0;
+  padding: 0;
+  background: @white;
 }
 
 p, blockquote {
   padding: 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: @header-font-family;
 }
 
 ul, ol {
@@ -18,7 +16,6 @@ ul, ol {
   margin: 0;
 }
 
-a {
+li {
   list-style: none;
-  color: @link-color;
 }

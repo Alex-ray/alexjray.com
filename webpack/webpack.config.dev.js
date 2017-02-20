@@ -1,6 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import qs from 'querystring';
+import autoprefixer from 'autoprefixer';
 
 const root = process.cwd();
 const src  = path.join(root, 'src');
@@ -62,7 +63,7 @@ export default {
     }),
   ],
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.js', '.less'],
     modules: [src, 'node_modules']
   },
   module: {
@@ -80,10 +81,17 @@ export default {
       {
        test: /\.(css|less)$/,
        include: clientInclude,
-       loaders: [
+       use: [
          'style-loader',
-         'css-loader?' + qs.stringify(cssLoaderConfig),
-         'postcss-loader',
+         {
+           loader: 'css-loader',
+           options: cssLoaderConfig
+         },{
+           loader: 'postcss-loader',
+           options: {
+             plugins: [autoprefixer]
+           }
+         },
          'less-loader'
        ]
      }

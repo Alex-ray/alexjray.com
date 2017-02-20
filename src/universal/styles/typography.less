@@ -1,8 +1,31 @@
-@header-font-family: 'Work Sans', 'sans-serif';
-@body-font-family: 'Neuton', 'serif';
+@import '~universal/styles/variables.less';
 
-@default-color: #222222;
+html, body {
+  color: @black;
+  font-family: @body-font-family;
+}
 
 h1, h2, h3, h4, h5, h6 {
-  color: @default-color
+  font-family: @header-font-family;
+}
+
+p,
+li,
+a,
+blockquote,
+span,
+i,
+h1, h2, h3, h4, h5, h6 {
+  color: inherit;
+}
+
+
+a {
+  text-decoration: none;
+  font-family: @header-font-family;
+}
+
+
+.largeHeader {
+  font-size: @font-size-large;
 }

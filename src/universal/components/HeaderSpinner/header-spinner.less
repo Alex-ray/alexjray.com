@@ -1,0 +1,46 @@
+@import '~universal/styles/typography.less';
+
+.headerWrapper {
+  position: relative;
+  overflow: hidden;
+  font-size: @font-size-large;
+  line-height: 1.125;
+  height: @font-size-large*1.125;
+  width: 100%;
+  text-align: center;
+}
+.nextTransition {
+  opacity: 0;
+}
+
+.nextTransition,
+.currentTransition {
+  display: block;
+  position: relative;
+  overflow: hidden;
+
+  transform: translateY(-100%);
+  transition: none;
+}
+
+.transitionDown {
+  opacity: 1;
+  transition: all ease-in-out;
+  transform: translateY(0%);
+}
+
+.transitionFast {
+  transition-duration: 200ms;
+}
+
+.transitionSlow {
+  transition-duration: 350ms;
+}
+
+.transitionMedium {
+  transition-duration: 250ms;
+}
+
+.currentTransition.transitionDown {
+  opacity: 0;
+}
