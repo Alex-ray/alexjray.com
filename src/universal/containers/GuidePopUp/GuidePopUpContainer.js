@@ -16,6 +16,8 @@ import {
 @connect(mapStateToProps, mapDispatchToProps)
 class GuidePopUpContainer extends Component {
   static propTypes = {
+    x: PropTypes.number,
+    y: PropTypes.number,
     open: PropTypes.bool.isRequired,
     closeGuide: PropTypes.func.isRequired
   };
@@ -23,11 +25,15 @@ class GuidePopUpContainer extends Component {
   render () {
     const {
       open,
-      closeGuide
+      x,
+      y,
+      closeGuide,
     } = this.props;
 
     return (
-      <GuidePopUp open={open} handleClose={closeGuide} />
+      <GuidePopUp
+      open={open}
+      handleClose={closeGuide} />
     );
   }
 };

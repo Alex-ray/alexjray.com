@@ -1,6 +1,6 @@
 // Libraries
 import React, {Component, PropTypes} from 'react';
-// MouseEnter / MouseLeave Events
+// MouseEnter ru/ MouseLeave Events
 // number clientX
 // number clientY
 // boolean ctrlKey

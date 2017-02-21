@@ -1,3 +1,4 @@
+@import '~universal/styles/variables.less';
 @import '~universal/styles/mixins.less';
 
 .logo {
@@ -7,9 +8,11 @@
   background-size: contain;
   background-repeat: no-repeat;
 
+	transform: rotate(15deg);
+
   position: absolute;
-  bottom: -100px;
-  left: 25px;
+  bottom: -(11*@base);
+  left: 5*@base;
 
   .retina-url('../../images/Logo.png', '../../images/Logo@2x.png');
 }

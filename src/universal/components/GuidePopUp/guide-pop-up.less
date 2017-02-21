@@ -8,18 +8,20 @@
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 10;
+  transition: transform 225ms ease-in;
 }
 
 .popUpClosed {
-  transition: opacity 200ms ease-out, transform 0ms linear 200ms;
+  // transition: opacity 200ms ease-out, transform 0ms linear 200ms;
   transform: translateY(100%);
-  opacity: 0;
+  // opacity: 0;
 }
 
 .popUpOpen {
   transition: transform 225ms ease-in;
   transform: translateY(0%);
-  opacity: 1;
+  // opacity: 1;
 }
 
 .closeLink {

@@ -16,7 +16,8 @@ class Circle extends Shape {
     half: PropTypes.bool,
     x: PropTypes.number,
     y: PropTypes.number,
-    color: PropTypes.string
+    color: PropTypes.string,
+    degree:  PropTypes.number
   }
 
   render () {
@@ -25,7 +26,8 @@ class Circle extends Shape {
       half,
       x,
       y,
-      color
+      color,
+      degree
     } = this.props;
 
     let classOptions = {
@@ -36,6 +38,7 @@ class Circle extends Shape {
     let styles = {
       top: y+'px',
       left: x+'px',
+      'transform': `rotate(${degree}deg)`
     };
 
     if (outline) {

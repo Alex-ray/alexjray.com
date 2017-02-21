@@ -16,7 +16,8 @@ class Square extends Shape {
     half: PropTypes.bool,
     x: PropTypes.number,
     y: PropTypes.number,
-    color: PropTypes.string
+    color: PropTypes.string,
+    degree:  PropTypes.number
   };
 
   render () {
@@ -25,7 +26,8 @@ class Square extends Shape {
       half,
       x,
       y,
-      color
+      color,
+      degree
     } = this.props;
 
     let classOptions = {
@@ -34,8 +36,9 @@ class Square extends Shape {
     };
 
     let styles = {
-      top: x+'px',
-      left: y+'px'
+      top: y+'px',
+      left: x+'px',
+      transform: `rotate(${degree}deg)` 
     };
 
     if (outline) {

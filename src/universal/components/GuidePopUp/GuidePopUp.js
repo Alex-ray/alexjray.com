@@ -18,7 +18,6 @@ import {
   closeLink
 } from './guide-pop-up.less';
 
-
 class GuidePopUp extends Component {
   static propTypes = {
     open: PropTypes.bool.isRequired,

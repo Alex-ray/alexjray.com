@@ -1,9 +1,9 @@
-import Home from 'universal/components/Home/Home.js';
+import HomeContainer from 'universal/containers/Home/HomeContainer.js';
 
 export default (store) => {
   return {
     path: '/',
-    component: Home,
+    component: HomeContainer,
     childRoutes: []
   }
 }
