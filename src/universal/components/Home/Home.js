@@ -7,13 +7,20 @@ import HeaderContainer     from 'universal/containers/Header/HeaderContainer.js'
 import GuidePopUpContainer from 'universal/containers/GuidePopUp/GuidePopUpContainer.js';
 
 // Components
-import HeaderSpinner       from 'universal/components/HeaderSpinner/HeaderSpinner.js';
+import HeaderSpinner   from 'universal/components/HeaderSpinner/HeaderSpinner.js';
+import ShapeBackground from 'universal/components/ShapeBackground/ShapeBackground.js';
 
 import Footer from 'universal/components/Footer/Footer.js';
 
 import Logo from 'universal/components/Logo/Logo.js';
 
 // Styles
+
+import {
+  shapeBackgroundContainer,
+  shapeBackgroundContent
+} from 'universal/components/ShapeBackground/ShapeBackground.less';
+
 import {
   fullScreen,
   centerContent
@@ -39,11 +46,19 @@ class Home extends Component {
   render () {
     return (
       <div>
-        <HeaderContainer />
-        <div onClick={this.handleClick} className={classNames(fullScreen, centerContent)}>
-          <HeaderSpinner titles={TITLES} />
-          <Logo />
+        <div className={shapeBackgroundContainer}>
+          <div className={shapeBackgroundContent}>
+            <HeaderContainer />
+            <div onClick={this.handleClick} className={classNames(fullScreen, centerContent)}>
+              <HeaderSpinner titles={TITLES} />
+              <Logo />
+            </div>
+          </div>
+
+          <ShapeBackground />
+
         </div>
+
         <Footer />
         <GuidePopUpContainer />
       </div>

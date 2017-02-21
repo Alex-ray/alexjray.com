@@ -1,0 +1,49 @@
+@import '~universal/styles/variables.less';
+
+// Circles
+.circleShape {
+  position: absolute;
+  background: @black;
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+}
+
+.circleHalf {
+  height:12.5px;
+  width:25px;
+  border-radius: 25px 25px 0 0;
+}
+
+.circleOutline {
+  height:12.5px;
+  width:25px;
+
+  background: transparent;
+
+  border-radius: 25px 25px 0 0;
+  border-left: solid 5px black;
+  border-right: solid 5px black;
+  border-top: solid 5px black;
+}
+
+// Squares
+.squareShape {
+  position: absolute;
+  background: @black;
+  width: 25px;
+  height: 25px;
+}
+
+.squareHalf {
+  width: 12.5px;
+}
+
+.squareOutline {
+  background: transparent;
+  border: solid 5px @black;
+}
+
+.squareHalf.squareOutline {
+  border-left: none;
+}
