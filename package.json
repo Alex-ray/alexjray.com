@@ -4,7 +4,7 @@
   "description": "Portolio for Alexander J Ray",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development node ./src/server/server.babel.js"
+    "dev": "NODE_PATH=./src NODE_ENV=development node ./src/server/server.babel.js"
   },
   "author": "Alexander J Ray",
   "license": "ISC",
@@ -21,11 +21,13 @@
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.14.0",
     "css-loader": "^0.26.1",
+    "file-loader": "^0.10.0",
     "less": "^2.7.2",
     "less-loader": "^2.2.3",
     "postcss-loader": "^1.3.1",
     "querystring": "^0.2.0",
     "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
     "webpack": "^2.2.1",
     "webpack-dev-middleware": "^1.10.1",
     "webpack-hot-middleware": "^2.17.0"

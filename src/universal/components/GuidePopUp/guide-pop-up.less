@@ -1,0 +1,28 @@
+@import '~universal/styles/variables.less';
+@import '~universal/styles/typography.less';
+
+.container {
+  position: fixed;
+  background: @black;
+  color: @white;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: top 250ms ease-in-out;
+}
+
+.popUpClosed {
+  top: 100vh;
+}
+
+.popUpOpen {
+  top: 0;
+}
+
+.closeLink {
+  .link;
+  font-family: @mono-font-family;
+  top: 2.5*@base;
+  right: 2.5*@base;
+  position: absolute;
+}

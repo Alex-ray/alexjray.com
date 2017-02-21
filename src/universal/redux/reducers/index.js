@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux-immutablejs';
-import {routing}         from './routing';
+import {routing}         from './routing.js';
+import guidePopUp        from './guidePopUp.js';
 
 const currentReducers = {
-  routing
+  routing,
+  guidePopUp
 };
 
 export default combineReducers({...currentReducers});

@@ -63,11 +63,13 @@ export default {
     }),
   ],
   resolve: {
-    extensions: ['.js', '.less'],
+    extensions: ['*', '.js'],
     modules: [src, 'node_modules']
   },
   module: {
     loaders: [
+      {test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/, loader: 'url-loader?limit=10000'},
+      {test: /\.(eot|ttf|wav|mp3)$/, loader: 'file-loader'},
 
       // Javascript
       {
@@ -76,6 +78,7 @@ export default {
         query: babelQuery,
         include: clientInclude
       },
+
 
       // CSS
       {

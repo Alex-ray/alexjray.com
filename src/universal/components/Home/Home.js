@@ -2,11 +2,16 @@
 import React, {Component, PropTypes} from 'react';
 import classNames from 'classnames';
 
+// Containers
+import HeaderContainer     from 'universal/containers/Header/HeaderContainer.js';
+import GuidePopUpContainer from 'universal/containers/GuidePopUp/GuidePopUpContainer.js';
+
 // Components
-import Header from 'universal/components/Header/Header.js';
-import HeaderSpinner from 'universal/components/HeaderSpinner/HeaderSpinner.js';
+import HeaderSpinner       from 'universal/components/HeaderSpinner/HeaderSpinner.js';
 
 import Footer from 'universal/components/Footer/Footer.js';
+
+import Logo from 'universal/components/Logo/Logo.js';
 
 // Styles
 import {
@@ -34,11 +39,13 @@ class Home extends Component {
   render () {
     return (
       <div>
-        <Header />
-        <div className={classNames(fullScreen, centerContent)}>
+        <HeaderContainer />
+        <div onClick={this.handleClick} className={classNames(fullScreen, centerContent)}>
           <HeaderSpinner titles={TITLES} />
+          <Logo />
         </div>
         <Footer />
+        <GuidePopUpContainer />
       </div>
     );
   }

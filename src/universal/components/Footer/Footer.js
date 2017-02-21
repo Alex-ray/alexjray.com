@@ -2,6 +2,7 @@
 import React, {Component, PropTypes} from 'react';
 import classNames from 'classnames';
 
+// Components
 import TableOfContents from 'universal/components/TableOfContents/TableOfContents.js';
 
 // Styles

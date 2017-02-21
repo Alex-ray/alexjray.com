@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import MenuLink from 'universal/components/MenuLink/MenuLink.js';
+import GuideLink from 'universal/components/GuideLink/GuideLink.js';
 
 import {
   container,
@@ -7,11 +7,19 @@ import {
 } from './header.less';
 
 class Header extends Component {
+  static propTypes = {
+    handleOpenGuide: PropTypes.func.isRequired
+  };
+
   render () {
+    const {
+      handleOpenGuide
+    } = this.props;
+
     return (
       <header className={container}>
-        <a className={link} href='/'>Alexander J Ray</a>
-        <MenuLink className={link} />
+        <a className={link} href='/'>Alexander James Ray</a>
+        <GuideLink handleClick={handleOpenGuide} className={link} />
       </header>
     );
   }
