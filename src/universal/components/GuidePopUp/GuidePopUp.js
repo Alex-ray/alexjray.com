@@ -38,7 +38,7 @@ class GuidePopUp extends Component {
 
     return (
       <aside className={classNames(container, fullScreen, centerContent, containerClassOptions)}>
-        <a className={closeLink} href="#" onClick={handleClose} >close</a>
+        <a className={closeLink} href="#" onClick={handleClose} >Close</a>
         <TableOfContents />
       </aside>
     );

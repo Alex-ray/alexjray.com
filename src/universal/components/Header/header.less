@@ -1,20 +1,23 @@
 @import '~universal/styles/variables.less';
 
 .container {
-  display: flex;
-  height: 10*@base;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 5*@base;
-  padding-right: 5*@base;
   position: absolute;
+  display: flex;
+
   top: 0;
   left: 0;
   right: 0;
+
+  padding-left: 5*@base;
+  padding-right: 5*@base;
+  padding-top: 5*@base;
+
+  align-items: center;
+  justify-content: space-between;
 }
 
 .link {
-  font-size: 17px;
+  font-size: 16px;
   font-family: @header-font-family;
   font-weight: lighter;
 }

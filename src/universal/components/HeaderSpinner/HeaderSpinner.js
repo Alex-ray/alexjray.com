@@ -47,6 +47,8 @@ class HeaderSpinner extends Component {
       titles
     } = this.props;
 
+    this.active = true;
+
     index = !titles[index] ? 0 : index;
     let nextIndex = !titles[index + 1] ? 0 : index + 1;
 
@@ -69,6 +71,8 @@ class HeaderSpinner extends Component {
       setTimeout(()=> {
         this.transition(nextIndex);
       }, durationMS*2);
+    } else {
+      this.active = false;
     }
 
     let fullRotation = nextIndex === 0 && index === titles.length-1;
@@ -76,8 +80,10 @@ class HeaderSpinner extends Component {
   }
 
   startTransitions = () => {
-    this.stop = false;
-    this.transition();
+    if (!this.active) {
+      this.stop = false;
+      this.transition();
+    }
   }
 
   render () {
