@@ -1,0 +1,26 @@
+@import '~universal/styles/variables.less';
+
+
+.container {
+  display: flex;
+  position: absolute;
+  bottom: 2.5*@base;
+  left: 5*@base;
+  right: 5*@base;
+
+  flex-direction: row;
+  justify-content: space-between;
+
+  font-family: @body-font-family;
+  font-size: 10px;
+  font-style: normal;
+}
+
+.copyRight,
+.email,
+.connect {
+  font-weight: lighter;;
+  font-size: 12px;
+  font-family: @body-font-family;
+  z-index: 11;
+}

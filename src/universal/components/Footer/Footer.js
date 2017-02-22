@@ -4,6 +4,7 @@ import classNames from 'classnames';
 
 // Components
 import TableOfContents from 'universal/components/TableOfContents/TableOfContents.js';
+import FootNotes       from 'universal/components/FootNotes/FootNotes.js';
 
 // Styles
 import {
@@ -12,7 +13,8 @@ import {
 } from 'universal/styles/layout.less';
 
 import {
-  container
+  container,
+  copyRight
 } from './footer.less';
 
 class Footer extends Component {
@@ -20,6 +22,7 @@ class Footer extends Component {
     return (
       <div className={classNames(container, fullScreen, centerContent)}>
         <TableOfContents />
+        <FootNotes />
       </div>
     );
   }
