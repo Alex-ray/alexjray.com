@@ -17,6 +17,7 @@ import {
 @connect(mapStateToProps, mapDispatchToProps)
 class HeaderContainer extends Component {
   static propTypes = {
+    fixed: PropTypes.bool,
     openGuide: PropTypes.func.isRequired
   };
 
@@ -31,8 +32,11 @@ class HeaderContainer extends Component {
   }
 };
 
-function mapStateToProps (state) {
-  return {};
+function mapStateToProps (state, ownProps) {
+  console.log('mapStateToProps ownProps', ownProps);
+  return {
+    fixed: ownProps.fixed
+  };
 }
 
 function mapDispatchToProps (dispatch) {

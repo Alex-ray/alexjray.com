@@ -8,13 +8,16 @@ import {
 
 class Header extends Component {
   static propTypes = {
+    fixed: PropTypes.bool,
     handleOpenGuide: PropTypes.func.isRequired
   };
 
   render () {
     const {
+      fixed,
       handleOpenGuide
     } = this.props;
+
 
     return (
       <header className={container}>
