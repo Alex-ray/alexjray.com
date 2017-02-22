@@ -3,6 +3,7 @@
 
 .container {
   position: fixed;
+  overflow: hidden;
   background: @black;
   color: @white;
   left: 0;
@@ -25,9 +26,12 @@
 }
 
 .closeLink {
-  .link;
-  font-family: @header-font-family;
+  font-family: @body-font-family;
   top: 5*@base;
   right: 5*@base;
   position: absolute;
+
+  &:hover {
+    color: @red;
+  }
 }

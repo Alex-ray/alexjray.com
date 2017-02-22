@@ -64,8 +64,8 @@ class Home extends Component {
             <div className={shapeBackgroundContent}>
               <HeaderContainer />
               <div onClick={this.handleClick} className={classNames(fullScreen, centerContent)}>
-                <HeaderSpinner titles={TITLES} />
-                <Logo />
+                <HeaderSpinner titles={TITLES} delay={1750}/>
+                <Logo bottom />
               </div>
             </div>
 

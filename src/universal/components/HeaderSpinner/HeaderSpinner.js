@@ -28,7 +28,8 @@ function getTransitionSpeed (itemIndex, maxItems) {
 
 class HeaderSpinner extends Component {
   static propTypes = {
-    titles: PropTypes.array,
+    titles: PropTypes.array.isRequired,
+    delay: PropTypes.number.isRequired
   }
 
   constructor (props) {
@@ -84,6 +85,14 @@ class HeaderSpinner extends Component {
       this.stop = false;
       this.transition();
     }
+  }
+
+  componentDidMount() {
+    const {
+      delay
+    } = this.props;
+
+    setTimeout(this.startTransitions, delay);
   }
 
   render () {

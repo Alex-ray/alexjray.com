@@ -23,7 +23,7 @@ class TableOfContentsListItem extends Component {
     let index = this.state.highlightIndex;
 
     if (force || index < textLength && index !== -1) {
-      this.setState({highlightIndex: index+1});
+      this.setState({highlightIndex: index+3});
 
       setTimeout(() => {
         this.highLightText(textLength);

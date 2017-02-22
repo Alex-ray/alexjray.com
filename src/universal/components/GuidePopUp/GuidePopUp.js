@@ -4,6 +4,9 @@ import classNames from 'classnames';
 
 // Components
 import TableOfContents from 'universal/components/TableOfContents/TableOfContents.js';
+import FootNotes       from 'universal/components/FootNotes/FootNotes.js';
+
+import Logo from 'universal/components/Logo/Logo.js';
 
 // Styles
 import {
@@ -37,8 +40,10 @@ class GuidePopUp extends Component {
 
     return (
       <aside className={classNames(container, fullScreen, centerContent, containerClassOptions)}>
+        <Logo top />
         <a className={closeLink} href="#" onClick={handleClose} >Close</a>
         <TableOfContents />
+        <FootNotes />
       </aside>
     );
   }
