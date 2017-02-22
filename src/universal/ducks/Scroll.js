@@ -34,7 +34,6 @@ export default function reducer(state = initialState, action = { }) {
 
 export const setScrollDimensions = (dispatch) => {
   return ({x, y}) => {
-    console.log('setScrollDimensions', x, y);
     dispatch({
       type: SCROLL_SET_DIMENSIONS,
       height: y,

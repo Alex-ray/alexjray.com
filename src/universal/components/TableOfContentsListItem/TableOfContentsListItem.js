@@ -1,5 +1,6 @@
 // Libraries
 import React, {Component, PropTypes} from 'react';
+import { Link } from 'react-router';
 
 const MAX_CHARACTER_LENGTH = 60;
 
@@ -22,10 +23,10 @@ class TableOfContentsListItem extends Component {
   highLightText = (textLength, force) => {
     let index = this.state.highlightIndex;
 
-    if (force || index < textLength && index !== -1) {
+    if (force || index < textLength && index !== -1 && !this.stop) {
       this.setState({highlightIndex: index+3});
 
-      setTimeout(() => {
+      this.timeout = setTimeout(() => {
         this.highLightText(textLength);
       }, 0);
     }
@@ -39,6 +40,13 @@ class TableOfContentsListItem extends Component {
 
   handleMouseLeave = () => {
     this.setState({highlightIndex: -1});
+  }
+
+  componentWillUnmount () {
+    this.stop = true;
+    if (this.timeout && window) {
+      window.clearTimeout(this.timeout);
+    }
   }
 
   getText (text, highlightIndex) {
@@ -86,7 +94,7 @@ class TableOfContentsListItem extends Component {
           onMouseLeave={this.handleMouseLeave}
           className={contentListItem}
           key={index}>
-        <a href={link}>{textList}</a>
+        <Link to={link}>{textList}</Link>
       </li>
     );
   }

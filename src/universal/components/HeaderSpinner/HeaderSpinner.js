@@ -65,13 +65,13 @@ class HeaderSpinner extends Component {
       // Buffer
       durationMS += 100;
 
-      setTimeout(() => {
+      this.timeout = setTimeout(() => {
         this.setState({transitioning: true});
+        this.timeout = setTimeout(()=> {
+          this.transition(nextIndex);
+        }, durationMS);
       }, durationMS);
 
-      setTimeout(()=> {
-        this.transition(nextIndex);
-      }, durationMS*2);
     } else {
       this.active = false;
     }
@@ -92,7 +92,14 @@ class HeaderSpinner extends Component {
       delay
     } = this.props;
 
-    setTimeout(this.startTransitions, delay);
+    this.timeout = setTimeout(this.startTransitions, delay);
+  }
+
+  componentWillUnmount () {
+    this.stop = true;
+    if (this.timeout && window) {
+      window.clearTimeout(this.timeout);
+    }
   }
 
   render () {
