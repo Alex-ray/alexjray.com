@@ -6,14 +6,38 @@
 }
 
 .contentListItem > a {
-  font-family: @mono-font-family;
+  font-family: @body-font-family;
+
+  &:hover {
+    transition: color 150ms ease-out;
+    color: @red;
+  }
+}
+//
+// .contentListItem a > span {
+//   display: inline-block;
+//   width: 0.7em;
+//   text-align: center;
+// }
+
+.contentListItemLink {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  white-space: nowrap;
+  justify-content: space-between;
 }
 
-
-.contentListItem a > span {
+.contentListItemLabel {
   display: inline-block;
-  width: 0.7em;
-  text-align: center;
+  overflow: hidden;
+  flex: 20;
+  &:after  { content: "............................................................................................................................................................................................." }
+}
+
+.contentListItemCategory {
+  display: block;
+  margin-left: 0.5em;
 }
 
 .contentListCharacterHover {

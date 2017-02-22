@@ -7,7 +7,10 @@ const MAX_CHARACTER_LENGTH = 60;
 import {
   contentListItem,
   contentListCharacterHover,
-  contentListCharacterHoverDark
+  contentListCharacterHoverDark,
+  contentListItemLink,
+  contentListItemLabel,
+  contentListItemCategory
 } from './table-of-contents-list-item.less';
 
 class TableOfContentsListItem extends Component {
@@ -34,12 +37,12 @@ class TableOfContentsListItem extends Component {
 
   handleMouseEnter = (textLength) => {
     return () => {
-      this.highLightText(textLength, true);
+      // this.highLightText(textLength, true);
     };
   }
 
   handleMouseLeave = () => {
-    this.setState({highlightIndex: -1});
+    // this.setState({highlightIndex: -1});
   }
 
   componentWillUnmount () {
@@ -86,15 +89,18 @@ class TableOfContentsListItem extends Component {
       dots += '.';
     }
 
-    let text = name + dots + categorieString;
-    let textList = this.getText(text, this.state.highlightIndex);
+    // let text = name + dots + categorieString;
+    // let textList = this.getText(text, this.state.highlightIndex);
+
+    let category = categories.length > 0 ? (<span className={contentListItemCategory}>{categorieString}</span>) : null;
 
     return (
-      <li onMouseEnter={this.handleMouseEnter(text.length)}
-          onMouseLeave={this.handleMouseLeave}
-          className={contentListItem}
+      <li className={contentListItem}
           key={index}>
-        <Link to={link}>{textList}</Link>
+        <Link className={contentListItemLink} to={link}>
+          <span className={contentListItemLabel}>{name}</span>
+          {category}
+        </Link>
       </li>
     );
   }

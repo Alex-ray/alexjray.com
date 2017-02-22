@@ -12,10 +12,10 @@ import {
 const CONTENTS = [
   {name: 'About', link: '/about', categories: []},
   {name: 'Connect', link: '/connect', categories: []},
-  {name: 'Buffer', link: '/buffer', categories: ['Web Development']},
-  {name: 'Red Interactive', link: '/red', categories: ['Web Development']},
-  {name: 'Addvocate', link: '/addvocate', categories: ['Web Development']},
-  {name: 'CK 12', link: '/ck12', categories: ['Web Development']},
+  {name: 'Buffer', link: '/buffer', categories: ['Web']},
+  {name: 'Red Interactive', link: '/red', categories: ['Web']},
+  {name: 'Addvocate', link: '/addvocate', categories: ['Web']},
+  {name: 'CK 12', link: '/ck12', categories: ['Web']},
   {name: 'Secret Stash', link: '/stash', categories: []}
 ];
 
