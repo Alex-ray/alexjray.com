@@ -10,12 +10,12 @@ import {
 } from './table-of-contents.less';
 
 const CONTENTS = [
-  {name: 'About', link: '/about', categories: []},
-  {name: 'Buffer', link: '/buffer', categories: ['Web']},
-  {name: 'Red Interactive', link: '/red', categories: ['Web']},
-  {name: 'Addvocate', link: '/addvocate', categories: ['Web']},
-  {name: 'CK 12', link: '/ck12', categories: ['Web']},
-  {name: 'Secret Stash', link: '/stash', categories: ['Other']}
+  {name: 'About', link: 'about', categories: []},
+  {name: 'Buffer', link: 'buffer', categories: ['Web']},
+  {name: 'Red Interactive', link: 'red', categories: ['Web']},
+  {name: 'Addvocate', link: 'addvocate', categories: ['Web']},
+  {name: 'CK 12', link: 'ck12', categories: ['Web']},
+  {name: 'Secret Stash', link: 'stash', categories: ['Other']}
 ];
 
 class TableOfContents extends Component {

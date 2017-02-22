@@ -1,8 +1,10 @@
 import React, {Component, PropTypes} from 'react';
 import GuideLink from 'universal/components/GuideLink/GuideLink.js';
+import classNames from 'classnames';
 
 import {
   container,
+  fixedContainer,
   link
 } from './header.less';
 
@@ -18,9 +20,8 @@ class Header extends Component {
       handleOpenGuide
     } = this.props;
 
-
     return (
-      <header className={container}>
+      <header className={classNames(container, {[fixedContainer]: fixed})}>
         <a className={link} href='/'>Alexander James Ray</a>
         <GuideLink handleClick={handleOpenGuide} className={link} />
       </header>

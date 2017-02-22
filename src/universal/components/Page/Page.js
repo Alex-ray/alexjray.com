@@ -1,17 +1,27 @@
 // Libraries
 import React, {Component, PropTypes} from 'react';
 
+// Containers
+import HeaderContainer     from 'universal/containers/Header/HeaderContainer.js';
+import GuidePopUpContainer from 'universal/containers/GuidePopUp/GuidePopUpContainer.js';
+
 // Components
-import HeaderContainer from 'universal/containers/Header/HeaderContainer.js';
+import Footer from 'universal/components/Footer/Footer.js';
+import Logo from 'universal/components/Logo/Logo.js';
 
 // Styles
 import {
-  section
+  content,
+  titleType
 } from './page.less';
+
+function Title (props) {
+  return props.title ? (<h1 className={titleType}>{props.title}</h1>): null;
+}
 
 class Page extends Component {
   static propTypes = {
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     children: React.PropTypes.element.isRequired
   };
 
@@ -22,10 +32,15 @@ class Page extends Component {
     } = this.props;
 
     return (
-      <section className={section}>
+      <section>
         <HeaderContainer fixed/>
-        <h1>{title}</h1>
-        {children}
+        <div className={content}>
+          <Title title={title} />
+          {children}
+          <Logo bottom />
+        </div>
+        <GuidePopUpContainer />
+        <Footer/>
       </section>
     );
   }

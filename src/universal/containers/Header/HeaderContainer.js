@@ -23,17 +23,17 @@ class HeaderContainer extends Component {
 
   render () {
     const {
-      openGuide
+      openGuide,
+      fixed
     } = this.props;
 
     return (
-      <Header handleOpenGuide={openGuide} />
+      <Header handleOpenGuide={openGuide} fixed={fixed}/>
     );
   }
 };
 
 function mapStateToProps (state, ownProps) {
-  console.log('mapStateToProps ownProps', ownProps);
   return {
     fixed: ownProps.fixed
   };

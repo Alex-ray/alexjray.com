@@ -97,7 +97,7 @@ class TableOfContentsListItem extends Component {
     return (
       <li className={contentListItem}
           key={index}>
-        <Link className={contentListItemLink} to={link}>
+        <Link to={link} className={contentListItemLink}>
           <span className={contentListItemLabel}>{name}</span>
           {category}
         </Link>

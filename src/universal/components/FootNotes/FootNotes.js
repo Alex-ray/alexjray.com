@@ -13,7 +13,6 @@ class FootNotes extends Component {
     return (
       <div className={container}>
         <a className={email} target='_blank' href='mailto:alexjamesray@gmail.com'>alexjamesray@gmail.com</a>
-        <span className={copyRight}>— Alexander James Ray © 2017 —</span>
         <a className={connect} target='_blank' href='https://keybase.io/alexjray'>Connect</a>
       </div>
     );
