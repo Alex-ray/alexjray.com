@@ -5,11 +5,14 @@ import classNames from 'classnames';
 import {
   container,
   fixedContainer,
-  link
+  hideLink,
+  headerLink,
+  headerNameLink
 } from './header.less';
 
 class Header extends Component {
   static propTypes = {
+    hideGuide: PropTypes.bool,
     fixed: PropTypes.bool,
     handleOpenGuide: PropTypes.func.isRequired
   };
@@ -17,13 +20,22 @@ class Header extends Component {
   render () {
     const {
       fixed,
+      hideGuide,
       handleOpenGuide
     } = this.props;
 
+    let classOptions = {
+      [fixedContainer]: fixed
+    };
+
+    let guideClassOptions = {
+      [hideLink]: hideGuide
+    };
+
     return (
-      <header className={classNames(container, {[fixedContainer]: fixed})}>
-        <a className={link} href='/'>Alexander James Ray</a>
-        <GuideLink handleClick={handleOpenGuide} className={link} />
+      <header className={classNames(container, classOptions)}>
+        <a className={headerNameLink} href='/'>Alexander James Ray</a>
+        <GuideLink hide={hideGuide} handleClick={handleOpenGuide} className={classNames(headerLink, guideClassOptions)} />
       </header>
     );
   }

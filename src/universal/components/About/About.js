@@ -28,44 +28,42 @@ class About extends Component {
         <li>
           Currently
           <ul>
-            <li>Open for new opportunties!</li>
+            <li>Open to new opportunities</li>
           </ul>
         </li>
         <li>
         Previously
           <ul>
-            <li>Buffer</li>
-            <li>RED</li>
-            <li>Addvocate</li>
-            <li>CK 12</li>
+            <li><a href='https://buffer.com'>Buffer</a></li>
+            <li><a href='https://ffffff.com'>RED</a></li>
+            <li><a href='https://addvocate.com'>Addvocate</a></li>
+            <li><a href='https://ck12.org'>CK 12</a></li>
           </ul>
         </li>
         <li>
-          Skills
+          Expertise
           <ul>
-            <li>JavaScript</li>
-            <li>PHP</li>
-            <li>Ruby on Rails</li>
-            <li>Python</li>
-            <li>Node</li>
-            <li>React, Redux</li>
+            <li>JavaScript, Node.js</li>
+            <li>React, Redux, Ember.js</li>
             <li>Webpack, Grunt, Gulp</li>
             <li>HTML, CSS</li>
-            <li>Docker</li>
+            <li>PHP</li>
+            <li>Ruby (on Rails)</li>
+            <li>Python, Django</li>
+            <li>Docker, Kubernetes</li>
             <li>Git</li>
-            <li>Sketch</li>
-            <li>Adobe</li>
+            <li>Adobe, Sketch, Pencil & Paper</li>
           </ul>
         </li>
         <li>
           Connect
           <ul>
-            <li>Email</li>
-            <li>Github</li>
-            <li>Linkedin</li>
-            <li>Twitter</li>
-            <li>Instagram</li>
-            <li>Spotify</li>
+            <li><a href='mailto:alexjamesray@gmail.com'>Email</a></li>
+            <li><a href='https://github.com/alex-ray'>Github</a></li>
+            <li><a href='https://linkedin.com/'>Linkedin</a></li>
+            <li><a href='https://twitter.com/_alexray'>Twitter</a></li>
+            <li><a href='https://instagram.com/alexjray'>Instagram</a></li>
+            <li><a href='https://spotify.com/'>Spotify</a></li>
           </ul>
         </li>
        </ul>

@@ -5,6 +5,7 @@ import classNames from 'classnames';
 // Containers
 import HeaderContainer     from 'universal/containers/Header/HeaderContainer.js';
 import GuidePopUpContainer from 'universal/containers/GuidePopUp/GuidePopUpContainer.js';
+import FooterContainer     from 'universal/containers/Footer/FooterContainer.js';
 
 // Components
 import Footer from 'universal/components/Footer/Footer.js';
@@ -43,7 +44,7 @@ class Page extends Component {
           <Logo bottom />
         </div>
         <GuidePopUpContainer />
-        <Footer/>
+        <FooterContainer enableScrollListener/>
       </section>
     );
   }

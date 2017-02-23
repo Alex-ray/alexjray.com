@@ -17,6 +17,7 @@ import {
 @connect(mapStateToProps, mapDispatchToProps)
 class HeaderContainer extends Component {
   static propTypes = {
+    hideGuide: PropTypes.bool,
     fixed: PropTypes.bool,
     openGuide: PropTypes.func.isRequired
   };
@@ -24,18 +25,21 @@ class HeaderContainer extends Component {
   render () {
     const {
       openGuide,
+      hideGuide,
       fixed
     } = this.props;
 
     return (
-      <Header handleOpenGuide={openGuide} fixed={fixed}/>
+      <Header handleOpenGuide={openGuide} fixed={fixed} hideGuide={hideGuide}/>
     );
   }
 };
 
 function mapStateToProps (state, ownProps) {
+
   return {
-    fixed: ownProps.fixed
+    fixed: ownProps.fixed,
+    hideGuide: state.getIn(['footer', 'visible'])
   };
 }
 

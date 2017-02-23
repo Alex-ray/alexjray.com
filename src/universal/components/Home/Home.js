@@ -72,7 +72,7 @@ class Home extends Component {
             <ShapeBackgroundContainer />
           </div>
 
-          <Footer />
+          <FooterContainer enableScrollListener={false} />
           <GuidePopUpContainer />
         </div>
       </ScrollWrapper>

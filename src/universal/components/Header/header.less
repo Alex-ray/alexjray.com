@@ -1,8 +1,10 @@
 @import '~universal/styles/variables.less';
+@import '~universal/styles/typography.less';
 
 .container {
   position: absolute;
   display: flex;
+  z-index: @z-index-3;
 
   top: 0;
   left: 0;
@@ -14,14 +16,31 @@
 
   align-items: center;
   justify-content: space-between;
+  transition: opacity 250ms ease-in-out;
+}
+
+.hideLink {
+  transition: opacity 250ms ease-in-out, top 0ms linear 250ms;
+  opacity: 0;
+  top: -100%;
 }
 
 .fixedContainer {
   position: fixed;
 }
 
-.link {
+.headerLink {
+  .link;
   font-size: 16px;
   font-family: @header-font-family;
   font-weight: lighter;
+}
+
+.headerNameLink {
+  .headerLink;
+  border-bottom: none;
+
+  &:hover {
+    border-bottom: none;
+  }
 }

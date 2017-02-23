@@ -1,7 +1,29 @@
 @import '~universal/styles/variables.less';
+@import '~universal/styles/typography.less';
 
-ul.aboutList {
-  & > ul {
-    padding-left: 2.5*@base;
+
+.aboutList {
+  margin: 5*@base 0 ;
+  font-family: @header-font-family;
+
+  li {
+    margin-bottom: 0.5*@base;
+    line-height: 1.5em;
   }
+
+  a {
+    .link
+  }
+
+  & > li {
+    margin-bottom: 5*@base;
+    font-weight: @font-weight-bold;
+  }
+
+  & > li > ul {
+    margin-top: 1.5*@base;
+    padding-left: 20*@base;
+    font-weight: @font-weight-normal;
+  }
+
 }
