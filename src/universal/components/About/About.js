@@ -1,14 +1,24 @@
 // Libraries
 import React, {Component, PropTypes} from 'react';
+import classNames from 'classnames';
 
 // Components
 import Page from 'universal/components/Page/Page.js';
 
+// Styles
+import {
+  centerContent
+} from 'universal/styles/layout.less';
+
+import {
+  aboutList
+} from './about.less';
+
 class About extends Component {
   render () {
     return (
-      <Page>
-       <ul>
+      <Page className={centerContent}>
+       <ul className={aboutList}>
         <li>
         Motto
           <ul>

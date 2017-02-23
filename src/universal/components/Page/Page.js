@@ -1,5 +1,6 @@
 // Libraries
 import React, {Component, PropTypes} from 'react';
+import classNames from 'classnames';
 
 // Containers
 import HeaderContainer     from 'universal/containers/Header/HeaderContainer.js';
@@ -22,19 +23,21 @@ function Title (props) {
 class Page extends Component {
   static propTypes = {
     title: PropTypes.string,
+    className: PropTypes.string,
     children: React.PropTypes.element.isRequired
   };
 
   render () {
     const {
       title,
+      className,
       children
     } = this.props;
 
     return (
       <section>
         <HeaderContainer fixed/>
-        <div className={content}>
+        <div className={classNames(content, className)}>
           <Title title={title} />
           {children}
           <Logo bottom />
