@@ -9,7 +9,14 @@ class Buffer extends Component {
   render () {
     return (
       <Page title={'Buffer'}>
-        <p>buffer stuff....</p>
+        <div>
+          <p>
+            <b>Remote Product Engineer</b>
+          </p>
+          <p>
+            In addition to the 
+          </p>
+        </div>
       </Page>
     );
   }

@@ -14,6 +14,9 @@ import {
 } from './table-of-contents-list-item.less';
 
 class TableOfContentsListItem extends Component {
+  static propTypes = {
+    onLinkClick: PropTypes.func
+  };
 
   constructor (props) {
     super(props);
@@ -76,7 +79,8 @@ class TableOfContentsListItem extends Component {
       name,
       categories,
       link,
-      index
+      index,
+      onLinkClick
     } = this.props;
 
     name+= ' ';
@@ -97,7 +101,7 @@ class TableOfContentsListItem extends Component {
     return (
       <li className={contentListItem}
           key={index}>
-        <Link to={link} className={contentListItemLink}>
+        <Link to={link} onClick={onLinkClick} className={contentListItemLink}>
           <span className={contentListItemLabel}>{name}</span>
           {category}
         </Link>

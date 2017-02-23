@@ -60,10 +60,10 @@ class About extends Component {
           <ul>
             <li><a href='mailto:alexjamesray@gmail.com'>Email</a></li>
             <li><a href='https://github.com/alex-ray'>Github</a></li>
-            <li><a href='https://linkedin.com/'>Linkedin</a></li>
+            <li><a href='https://www.linkedin.com/in/alexander-ray-a0348759'>Linkedin</a></li>
             <li><a href='https://twitter.com/_alexray'>Twitter</a></li>
             <li><a href='https://instagram.com/alexjray'>Instagram</a></li>
-            <li><a href='https://spotify.com/'>Spotify</a></li>
+            <li><a href='https://open.spotify.com/user/124707193'>Spotify</a></li>
           </ul>
         </li>
        </ul>

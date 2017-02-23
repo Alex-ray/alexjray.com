@@ -13,6 +13,17 @@ import stash          from './stash.js';
 export default (store) => {
   return {
     component: AppContainer,
+    onEnter: (prevState, nextState) => {
+      if (window) {
+        setTimeout(() => {window.scrollTo(0, 0)}, 0);
+      }
+    },
+    onChange: (prevState, nextState) => {
+      console.log('window scroll')
+      if (window) {
+        window.scrollTo(0, 0);
+      }
+    },
     childRoutes: [
       home(store),
       about(store),

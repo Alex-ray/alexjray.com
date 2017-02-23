@@ -14,6 +14,7 @@ import Logo from 'universal/components/Logo/Logo.js';
 // Styles
 import {
   content,
+  contentWrapper,
   titleType
 } from './page.less';
 
@@ -39,9 +40,11 @@ class Page extends Component {
       <section>
         <HeaderContainer fixed/>
         <div className={classNames(content, className)}>
-          <Title title={title} />
-          {children}
-          <Logo bottom />
+          <div className={contentWrapper}>
+            <Title title={title} />
+            {children}
+            <Logo bottom />
+          </div>
         </div>
         <GuidePopUpContainer />
         <FooterContainer enableScrollListener/>

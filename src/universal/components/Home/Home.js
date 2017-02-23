@@ -6,12 +6,11 @@ import classNames from 'classnames';
 import HeaderContainer          from 'universal/containers/Header/HeaderContainer.js';
 import GuidePopUpContainer      from 'universal/containers/GuidePopUp/GuidePopUpContainer.js';
 import ShapeBackgroundContainer from 'universal/containers/ShapeBackground/ShapeBackgroundContainer.js';
+import FooterContainer          from 'universal/containers/Footer/FooterContainer.js';
 
 // Components
 import HeaderSpinner   from 'universal/components/HeaderSpinner/HeaderSpinner.js';
 import ScrollWrapper   from 'universal/components/ScrollWrapper/ScrollWrapper.js';
-
-import Footer from 'universal/components/Footer/Footer.js';
 
 import Logo from 'universal/components/Logo/Logo.js';
 

@@ -5,13 +5,16 @@ class GuideLink extends Component {
     handleClick: PropTypes.func
   };
 
+  handleClick = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    this.props.handleClick();
+  }
+
   render () {
-    const {
-      handleClick
-    } = this.props;
 
     return (
-      <a href="#" onClick={handleClick} className={this.props.className}>
+      <a href="#" onClick={this.handleClick} className={this.props.className}>
         Guide
       </a>
     );

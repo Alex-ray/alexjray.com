@@ -1,7 +1,12 @@
+// Libraries
 import React, {Component, PropTypes} from 'react';
-import GuideLink from 'universal/components/GuideLink/GuideLink.js';
 import classNames from 'classnames';
+import { Link } from 'react-router';
 
+// Components
+import GuideLink from 'universal/components/GuideLink/GuideLink.js';
+
+// Styles
 import {
   container,
   fixedContainer,
@@ -34,7 +39,7 @@ class Header extends Component {
 
     return (
       <header className={classNames(container, classOptions)}>
-        <a className={headerNameLink} href='/'>Alexander James Ray</a>
+        <Link className={headerNameLink} to='/'>Alexander James Ray</Link>
         <GuideLink hide={hideGuide} handleClick={handleOpenGuide} className={classNames(headerLink, guideClassOptions)} />
       </header>
     );

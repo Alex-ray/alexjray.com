@@ -22,10 +22,8 @@ class ScrollWrapper extends Component {
     if (this.props.onScrollDimensions && window) {
       let body = window.document.body;
       let html = window.document.documentElement;
-
       let height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
       let width  = Math.max( body.scrollWidth, body.offsetHeight, html.clientWidth, html.scrollWidth, html.offsetWidth );
-      console.log('setting scroll dimensions', width, height);
       this.props.onScrollDimensions({x: width, y: height});
     }
 

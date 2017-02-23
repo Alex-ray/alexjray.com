@@ -28,7 +28,7 @@ const CONTAINER_EL = 'CONTAINER_EL';
 
 class Footer extends Component {
   static propTypes = {
-    enableScrollListener: PropTypes.bool, 
+    enableScrollListener: PropTypes.bool,
     setScrollState: PropTypes.func.isRequired
   };
 
@@ -37,9 +37,11 @@ class Footer extends Component {
       setScrollState
     } = this.props;
 
+    if (!this[CONTAINER_EL]) return false;
+
     let clientHeight = this[CONTAINER_EL].clientHeight;
-    let offsetTop    = this[CONTAINER_EL].offsetTop;
-    let clientBottomPosition = clientHeight + y;
+    let offsetTop    = this[CONTAINER_EL].offsetTop + 50;
+    let clientBottomPosition = clientHeight + y ;
     let isInView = (clientBottomPosition >= offsetTop);
 
     setScrollState(isInView);

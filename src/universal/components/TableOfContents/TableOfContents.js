@@ -20,12 +20,20 @@ const CONTENTS = [
 
 class TableOfContents extends Component {
 
+  static propTypes = {
+    handleLinkClick: PropTypes.func
+  };
+
   getList (contents) {
     let list = [ ];
 
+    const {
+      handleLinkClick
+    } = this.props;
+
     for (var i = 0; i < contents.length; i++) {
       let item = contents[i];
-      list.push(<TableOfContentsListItem {...item} index={i} key={i}/>)
+      list.push(<TableOfContentsListItem {...item} onLinkClick={handleLinkClick} index={i} key={i}/>)
     }
 
     return list;
