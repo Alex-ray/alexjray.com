@@ -1,9 +1,16 @@
+// Libraries
 import React, {Component, PropTypes} from 'react';
+
+// Components
+import Page from 'universal/components/Page/Page.js';
+
 
 class Buffer extends Component {
   render () {
     return (
-      <h1>Buffer</h1>
+      <Page title={'Buffer'}>
+        <p>buffer stuff....</p>
+      </Page>
     );
   }
 }

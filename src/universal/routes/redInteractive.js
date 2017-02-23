@@ -2,7 +2,7 @@ import RedInteractive from 'universal/components/RedInteractive/RedInteractive.j
 
 export default (store) => {
   return {
-    path: '/red',
+    path: 'red',
     component: RedInteractive,
     childRoutes: []
   }

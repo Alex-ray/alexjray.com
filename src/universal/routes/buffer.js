@@ -2,7 +2,7 @@ import Buffer from 'universal/components/Buffer/Buffer.js';
 
 export default (store) => {
   return {
-    path: '/buffer',
+    path: 'buffer',
     component: Buffer,
     childRoutes: []
   }
