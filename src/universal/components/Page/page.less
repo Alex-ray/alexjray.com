@@ -33,6 +33,16 @@
   margin: 0 auto;
   margin-top: 5*@base;
   padding-left: 2.5*@base;
+
+  ul {
+    padding-top: 1.5*@base;
+
+    li {
+      margin-left: 2*@base;
+      list-style-type: disc;
+      font-size: 15px;
+    }
+  }
 }
 
 .bottomContentBorder {
@@ -58,16 +68,24 @@
     font-family: 'Open Sans';
     font-weight: 300;
     font-size: 17px;
-    line-height: 1.5em;
+    line-height: 1.6em;
   }
 }
 
 .media {
+  position: relative;
   margin: 10*@base 0;
 
   > div {
     margin: 0 auto;
   }
+}
+
+.phoneMedia {
+  position: absolute;
+  top: 90px;
+  right: 15%;
+  z-index: @z-index-2;
 }
 
 .columnContainer {

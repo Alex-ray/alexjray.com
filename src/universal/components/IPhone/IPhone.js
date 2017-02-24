@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react';
+import classNames from 'classnames';
 
 import {
   hold,
@@ -15,7 +16,7 @@ import {
 class IPhone extends Component {
   render () {
     return (
-      <div className={hold}>
+      <div className={classNames(hold, this.props.className)}>
         <div className={main}>
           <div className={inner}>
             <img className={image} src={this.props.image}/>

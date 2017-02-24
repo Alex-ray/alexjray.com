@@ -56,7 +56,7 @@ class Page extends Component {
       bullets
     } = this.props;
 
-    let bulletList = this.getBullets(bullets);
+    let bulletList = bullets ? this.getBullets(bullets) : [];
 
     return (
       <section>
@@ -70,7 +70,7 @@ class Page extends Component {
             <div className={flexContent}>
               {children}
 
-              <span className={bottomContentBorder}>...............</span>
+              {bullets ? <span className={bottomContentBorder}>...............</span> : null}
 
               <ul className={bottomTagList}>{bulletList}</ul>
             </div>
