@@ -1,0 +1,78 @@
+.hold {
+  width: 100px;
+}
+.hold .main {
+  display: block;
+  position: relative;
+  background-color: #9b9b9b;
+  border: 3px solid #1d2d2d;
+  border-top: 23px solid #1d2d2d;
+  border-bottom: 23.6px solid #1d2d2d;
+  border-radius: 11.3px;
+  height: 205.2px;
+  box-shadow: 0 0 0 1px #C6C7CA;
+}
+.hold .main:after {
+  content: '';
+  position: absolute;
+  top: -13px;
+  left: 55%;
+  -webkit-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
+  -o-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  width: 3px;
+  height: 3px;
+  background-color: #959595;
+  border-radius: 100%;
+  -webkit-transform: translate(-18px,0);
+  -ms-transform: translate(-18px,0);
+  -o-transform: translate(-18px,0);
+  transform: translate(-18px,0);
+}
+.hold .main:before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 55%;
+  opacity: 1;
+  width: 20px;
+  height: 1px;
+  -webkit-transform: translate(-9px,-7.5px);
+  -ms-transform: translate(-9px,-7.5px);
+  -o-transform: translate(-9px,-7.5px);
+  transform: translate(-9px,-7.5px);
+  border-radius: 1px;
+  background-color: #959595;
+}
+.hold .inner {
+  display: block;
+}
+.hold .sub {
+  display: block;
+  text-align: center;
+  position: relative;
+  height: 0;
+}
+.hold .sub .bot {
+  border-radius: 100%;
+  width: 14px;
+  height: 14px;
+  display: block;
+  margin: 0 auto;
+  background-color: transparent;
+  z-index: 2;
+  box-shadow: 0 0 0 1.1px #636670;
+  -webkit-transform: translate(0,-18.8px);
+  -ms-transform: translate(0,-18.8px);
+  -o-transform: translate(0,-18.8px);
+  transform: translate(0,-18.8px);
+}
+
+
+.image {
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}

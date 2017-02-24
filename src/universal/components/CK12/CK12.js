@@ -5,6 +5,7 @@ import React, {Component, PropTypes} from 'react';
 import Page from 'universal/components/Page/Page.js';
 import Laptop from 'universal/components/Laptop/Laptop.js';
 import IMac   from 'universal/components/IMac/IMac.js';
+import IPhone   from 'universal/components/IPhone/IPhone.js';
 
 import {
   styledContent,
