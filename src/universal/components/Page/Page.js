@@ -15,7 +15,11 @@ import Logo from 'universal/components/Logo/Logo.js';
 import {
   content,
   contentWrapper,
-  titleType
+  titleType,
+  titleLink,
+  flexContent,
+  bottomContentBorder,
+  bottomTagList
 } from './page.less';
 
 function Title (props) {
@@ -25,24 +29,51 @@ function Title (props) {
 class Page extends Component {
   static propTypes = {
     title: PropTypes.string,
+    linkSrc: PropTypes.string,
     className: PropTypes.string,
     children: React.PropTypes.element.isRequired
   };
 
+  getBullets (bullets ) {
+    let list = [];
+
+    for (var i = 0; i < bullets.length; i++) {
+      let bullet = bullets[i];
+
+      list.push(<li key={i}>{bullet}</li>);
+    }
+
+    return list;
+  }
+
+
   render () {
     const {
       title,
+      linkSrc,
       className,
-      children
+      children,
+      bullets
     } = this.props;
+
+    let bulletList = this.getBullets(bullets);
 
     return (
       <section>
         <HeaderContainer fixed/>
         <div className={classNames(content, className)}>
           <div className={contentWrapper}>
-            <Title title={title} />
-            {children}
+            <div>
+              <Title title={title} />
+              <a className={titleLink} href={linkSrc}>{linkSrc}</a>
+            </div>
+            <div className={flexContent}>
+              {children}
+
+              <span className={bottomContentBorder}>...............</span>
+
+              <ul className={bottomTagList}>{bulletList}</ul>
+            </div>
             <Logo bottom />
           </div>
         </div>

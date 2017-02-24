@@ -1,4 +1,5 @@
 @import '~universal/styles/variables.less';
+@import '~universal/styles/typography.less';
 
 .content {
   position: relative;
@@ -12,6 +13,66 @@
 .contentWrapper {
   padding-top: 10*@base;
   padding-bottom: 5*@base;
+  display: flex;
 }
 
-.titleType {}
+.titleType {
+  margin-top: 5*@base;
+}
+
+.titleLink {
+  .link;
+}
+
+.flexContent {
+  flex: 1;
+}
+
+.styledContent {
+  max-width: 700px;
+  margin: 0 auto;
+  margin-top: 5*@base;
+  padding-left: 2.5*@base;
+}
+
+.bottomContentBorder {
+  margin: 5*@base 0;
+  display: block;
+}
+
+.bottomTagList {
+  margin-bottom: 5*@base;
+  > li {
+    display: inline-block;
+    margin-right: 1.5*@base;
+  }
+}
+
+.subTitle {
+  font-size: 18px;
+}
+
+.description {
+
+  p {
+    font-family: 'Open Sans';
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.5em;
+  }
+}
+
+.media {
+  margin: 10*@base 0;
+
+  > div {
+    margin: 0 auto;
+  }
+}
+
+.columnContainer {
+  display: flex;
+}
+.columnTwo {
+  margin-top: 20*@base;
+}

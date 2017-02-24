@@ -1,0 +1,81 @@
+.hold {
+  width: 350px;
+}
+.hold .main {
+  display: block;
+  position: relative;
+  background-color: #9b9b9b;
+  height: 200px;
+  border: 12.6px solid #2d2d2d;
+  border-top-left-radius: 8.4px;
+  border-top-right-radius: 8.4px;
+}
+.hold .main:after {
+  content: '';
+  position: absolute;
+  top: -10.05px;
+  left: 50%;
+  transform: translate(-50%,0);
+  width: 6.65px;
+  height: 6.65px;
+  background-color: #959595;
+  border-radius: 100%;
+}
+.hold .main:before {
+  content: '';
+  opacity: 0;
+}
+.hold .inner {
+  display: block;
+}
+.hold .sub {
+  display: block;
+  text-align: center;
+}
+.hold .sub .top {
+  position: relative;
+  display: block;
+  width: 350px;
+  height: 28px;
+  background-color: #e8e8e8;
+  border-bottom-left-radius: 8.4px;
+  border-bottom-right-radius: 8.4px;
+  opacity: 1;
+  z-index: 2;
+}
+.hold .sub .mid {
+  display: block;
+  text-align: center;
+  height: 28px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.hold .sub .mid .part {
+  display: block;
+  margin: 0 auto;
+  border-bottom: 35px solid #cdcdcd;
+  border-left: 17.5px solid transparent;
+  border-right: 17.5px solid transparent;
+  height: 0;
+  width: 105px;
+}
+
+.hold .sub .bot {
+  position: relative;
+  display: block;
+  width: 140px;
+  height: 10.5px;
+  margin: 0 auto;
+  background-color: #e8e8e8;
+  border-radius: 7px 7px 0 0;
+  opacity: 1;
+  z-index: 2;
+}
+
+.image {
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}

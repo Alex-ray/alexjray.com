@@ -48,7 +48,7 @@ class Html extends Component {
      <html>
        <head>
          <meta charSet="utf-8"/>
-         <link href="https://fonts.googleapis.com/css?family=Space+Mono:400|Averia+Serif+Libre:300,400,400i,700|Poppins:400,500" rel="stylesheet" />
+         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Averia+Serif+Libre:300,400,400i,700|Poppins:300,400,500" rel="stylesheet" />
          <title>{title}</title>
        </head>
        <body>
