@@ -1,21 +1,27 @@
 // Libraries
 import React, {Component, PropTypes} from 'react';
+import ReactPlayer from 'react-player';
+
+
 
 // Components
 import Page from 'universal/components/Page/Page.js';
 import IMac   from 'universal/components/IMac/IMac.js';
 import Laptop from 'universal/components/Laptop/Laptop.js';
 
-
 import {
   styledContent,
   description,
   subTitle,
-  media
+  media,
+  mediaVideo
 } from 'universal/components/Page/page.less';
 
 // Images
-import screenImage from 'universal/../images/addvocate/screen.png';
+import screenImage from 'universal/../images/buffer/overview-analytics.png';
+
+// Video
+import overviewAnalyticsVideo from 'universal/../videos/buffer/overview-analytics.mov';
 
 class Buffer extends Component {
   render () {
@@ -36,7 +42,9 @@ class Buffer extends Component {
           </div>
 
           <div className={media}>
-            <IMac video={"https://www.youtube.com/watch?v=jqDQDbcf1Cc"}/>
+            <IMac image={screenImage}/>
+            <ReactPlayer className={mediaVideo} url={"https://youtu.be/jqDQDbcf1Cc"}  youtubeConfig={{playerVars: {modestbranding: 1, showinfo: 0}}} />
+            <ReactPlayer className={mediaVideo} url={"https://youtu.be/LeHMbG4gm5I"}  youtubeConfig={{playerVars: {modestbranding: 1, showinfo: 0}}} />
           </div>
 
         </div>

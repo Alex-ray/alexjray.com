@@ -16,7 +16,7 @@ import {
 } from './i-mac.less';
 
 function getVideoEl (videoSrc) {
-  return (<ReactPlayer url={videoSrc} height={198} width={330} youtubeConfig={{playerVars: {modestbranding: 1, showinfo: 0}}} />);
+  return (<ReactPlayer url={videoSrc} height={198} width={330} controls />);
 }
 
 function getImageEl (imageSrc) {
