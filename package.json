@@ -4,11 +4,15 @@
   "description": "Portolio for Alexander J Ray",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_PATH=./src NODE_ENV=development node ./src/server/server.babel.js"
+    "dev": "NODE_PATH=./src NODE_ENV=development node ./src/server/server.babel.js",
+    "build": "npm run build:client && npm run build:server",
+    "build:server": "NODE_ENV=production webpack --config ./webpack/server.babel.js",
+    "build:client": "NODE_ENV=production webpack --config ./webpack/prod.babel.js"
   },
   "author": "Alexander J Ray",
   "license": "ISC",
   "devDependencies": {
+    "assets-webpack-plugin": "^3.5.1",
     "autoprefixer": "^6.7.3",
     "babel-loader": "^6.2.5",
     "babel-plugin-add-module-exports": "^0.2.1",
