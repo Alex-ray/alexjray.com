@@ -5,6 +5,7 @@ import {push, replace} from 'react-router-redux';
 import poissonDiscSampler from 'universal/utils/PoissonDiscSampler.js';
 
 export const SHAPE_BACKGROUND_SET_SHAPES = 'SHAPE_BACKGROUND_SET_SHAPES';
+export const SHAPE_BACKGROUND_SET_DIMENSIONS = 'SHAPE_BACKGROUND_SET_DIMENSIONS';
 
 function getRandomDegree ( ) {
   return Math.floor(Math.random() * 360);
@@ -77,7 +78,9 @@ function generateShapes(limit, maxWidth, maxHeight) {
 }
 
 const initialState = fromJS({
-  shapes: []
+  shapes: [],
+  width: 0,
+  height: 0
 });
 
 export default function reducer(state = initialState, action = { }) {
@@ -86,8 +89,23 @@ export default function reducer(state = initialState, action = { }) {
       return state.merge({
         shapes: action.shapes
       });
+    case SHAPE_BACKGROUND_SET_DIMENSIONS:
+      return state.merge({
+        width: action.width,
+        height: action.height
+      });
     default:
       return state;
+  }
+}
+
+export const setShapeDimensions = (dispatch) => {
+  return (maxWidthPosition, maxHeightPosition) => {
+    dispatch({
+      type: SHAPE_BACKGROUND_SET_DIMENSIONS,
+      width: maxWidthPosition,
+      height: maxHeightPosition
+    });
   }
 }
 

@@ -9,8 +9,11 @@ import ShapeBackground from 'universal/components/ShapeBackground/ShapeBackgroun
 
 // Ducks
 import {
-  setShapes
+  setShapes,
+  setShapeDimensions
 } from 'universal/ducks/ShapeBackground.js';
+
+const REF_SHAPE_BACKGROUND = 'REF_SHAPE_BACKGROUND';
 
 
 @connect(mapStateToProps, mapDispatchToProps)
@@ -18,35 +21,39 @@ class ShapeBackgroundContainer extends Component {
   static propTypes = {
     x: PropTypes.number,
     y: PropTypes.number,
-    scrollHeight: PropTypes.number,
-    scrollWidth: PropTypes.number,
-    setShapes: PropTypes.func.isRequired
+    height: PropTypes.number,
+    width: PropTypes.number,
+    // Actions
+    setShapes: PropTypes.func.isRequired,
+    setDimensions: PropTypes.func.isRequired
   };
 
   render () {
     const {
       x,
       y,
-      scrollHeight,
-      scrollWidth,
-      shapes
+      height,
+      width,
+      shapes,
+      setDimensions
     } = this.props;
 
-    return (<ShapeBackground shapes={shapes} offset={{x: x, y: y}} scrollWidth={scrollWidth} scrollHeight={scrollHeight} />);
+    return (<ShapeBackground setDimensions={setDimensions} shapes={shapes} offset={{x: x, y: y}} scrollWidth={width} scrollHeight={height} />);
   }
 
   componentDidUpdate (prevProps) {
     const {
-      scrollHeight,
-      scrollWidth,
+      height,
+      width,
       setShapes
     } = this.props;
 
-    let updateHeight = (scrollHeight !== 0 && scrollHeight !== prevProps.scrollHeight);
-    let updateWidth  = (scrollWidth !== 0 && scrollWidth !== prevProps.scrollWidth);
+    let updateHeight = (height !== 0 && height !== prevProps.height);
+    let updateWidth  = (width !== 0 && width !== prevProps.width);
+
 
     if (updateHeight || updateWidth) {
-      setShapes(30, scrollWidth, scrollHeight);
+      setShapes(15, width, height);
     }
 
   }
@@ -54,7 +61,8 @@ class ShapeBackgroundContainer extends Component {
 
 function mapDispatchToProps(dispatch) {
   return {
-    setShapes: setShapes(dispatch)
+    setShapes: setShapes(dispatch),
+    setDimensions: setShapeDimensions(dispatch)
   };
 }
 
@@ -62,8 +70,8 @@ function mapStateToProps (state) {
   let offset = state.getIn(['scroll', 'offsets']).toJS();
   let shapes = state.getIn(['shapeBackground', 'shapes']).toJS();
   return {
-    scrollHeight: state.getIn(['scroll', 'scrollHeight']),
-    scrollWidth: state.getIn(['scroll', 'scrollWidth']),
+    height: state.getIn(['shapeBackground', 'height']),
+    width: state.getIn(['shapeBackground', 'width']),
     shapes: shapes,
     x: offset.x,
     y: offset.y

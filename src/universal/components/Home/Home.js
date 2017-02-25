@@ -43,8 +43,7 @@ const TITLES = [
 
 class Home extends Component {
   static propTypes = {
-    setScrollOffsets: PropTypes.func.isRequired,
-    setScrollDimensions:  PropTypes.func.isRequired
+    setScrollOffsets: PropTypes.func.isRequired
   };
 
   handleScrollEvent = (event, y, x) => {
@@ -52,12 +51,8 @@ class Home extends Component {
   }
 
   render () {
-    const {
-      setScrollDimensions
-    } = this.props;
-
     return (
-      <ScrollWrapper onWindowScroll={this.handleScrollEvent} onScrollDimensions={setScrollDimensions}>
+      <ScrollWrapper onWindowScroll={this.handleScrollEvent} >
         <div>
           <div className={shapeBackgroundContainer}>
             <div className={shapeBackgroundContent}>

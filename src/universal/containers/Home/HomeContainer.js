@@ -9,8 +9,7 @@ import Home from 'universal/components/Home/Home.js';
 
 // Ducks
 import {
-  setScrollOffsets,
-  setScrollDimensions
+  setScrollOffsets
 } from 'universal/ducks/Scroll.js';
 
 
@@ -18,17 +17,15 @@ import {
 class HomeContainer extends Component {
   static propTypes = {
     setScrollOffsets: PropTypes.func.isRequired,
-    setScrollDimensions: PropTypes.func.isRequired
   };
 
   render () {
     const {
       setScrollOffsets,
-      setScrollDimensions
     } = this.props;
 
     return (
-      <Home setScrollOffsets={setScrollOffsets} setScrollDimensions={setScrollDimensions} />
+      <Home setScrollOffsets={setScrollOffsets} />
     );
   }
 };
@@ -39,8 +36,7 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch) {
   return {
-    setScrollOffsets: setScrollOffsets(dispatch),
-    setScrollDimensions: setScrollDimensions(dispatch)
+    setScrollOffsets: setScrollOffsets(dispatch)
   };
 }
 

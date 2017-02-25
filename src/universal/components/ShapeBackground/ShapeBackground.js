@@ -9,12 +9,16 @@ import Circle from 'universal/components/Shape/Circle.js';
 import {container} from './ShapeBackground.less';
 
 
+const REF_SHAPE_BACKGROUND = 'REF_SHAPE_BACKGROUND';
+
+
 class ShapeBackground extends Component {
   static propTypes = {
     offset: PropTypes.object,
     shapes: PropTypes.array,
     scrollHeight: PropTypes.number,
-    scrollWidth: PropTypes.number
+    scrollWidth: PropTypes.number,
+    setDimensions: PropTypes.func
   };
 
   getShape(shape, color, cordinates, degree, index) {
@@ -61,11 +65,24 @@ class ShapeBackground extends Component {
     }
 
     return (
-      <div className={container}>
+      <div ref={this.setRef(REF_SHAPE_BACKGROUND)} className={container}>
         {shapeEls}
       </div>
     );
   }
+
+  setRef (key) {
+    return (ref) => {
+      this[key] = ref;
+    };
+  }
+
+  componentDidMount () {
+    let el = this[REF_SHAPE_BACKGROUND];
+    this.props.setDimensions(el.clientWidth, el.clientHeight);
+  }
+
+
 }
 
 export default ShapeBackground;
