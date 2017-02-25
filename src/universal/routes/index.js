@@ -30,8 +30,8 @@ export default (store) => {
       buffer(store),
       redInteractive(store),
       addvocate(store),
-      ck12(store),
-      stash(store)
+      ck12(store)
+      // stash(store)
     ]
   }
 }
