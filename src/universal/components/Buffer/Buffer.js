@@ -36,7 +36,7 @@ class Buffer extends Component {
           </div>
 
           <div className={media}>
-            <IMac image={screenImage}/>
+            <IMac video={"https://www.youtube.com/watch?v=jqDQDbcf1Cc"}/>
           </div>
 
         </div>
