@@ -44,6 +44,8 @@ class Html extends Component {
       </Provider>
     );
 
+    console.log('assets : ', assets);
+
     return (
      <html>
        <head>

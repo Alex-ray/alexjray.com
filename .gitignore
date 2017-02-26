@@ -3,3 +3,10 @@ node_modules
 build
 npm-debug.log
 .env
+.elasticbeanstalk
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+.awspublish-alexjray.com

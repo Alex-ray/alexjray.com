@@ -8,6 +8,9 @@ const src  = path.join(root, 'src');
 const build = path.join(root, 'build');
 const universal = path.join(src, 'universal');
 const server = path.join(src, 'server');
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const serverInclude = [
   server,
@@ -31,7 +34,7 @@ export default {
     chunkFilename: '[name]_[chunkhash].js',
     filename: '[name].js',
     libraryTarget: 'commonjs2',
-    publicPath: '/static/'
+    publicPath: process.env['STATIC_ASSETS_DIR']
   },
 
   // ignore anything that throws warnings & doesn't affect the view

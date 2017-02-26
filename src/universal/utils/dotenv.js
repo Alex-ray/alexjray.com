@@ -5,10 +5,13 @@
  *
  * Returns true.
  */
+
+ import dotenv from 'dotenv';
+ import dotenvExpand from 'dotenv-expand';
+
 export function getDotenv() {
-  var dotenv = require('dotenv');              // eslint-disable-line
-  var dotenvExpand = require('dotenv-expand'); // eslint-disable-line
   var myEnv = dotenv.config({silent: true});   // eslint-disable-line
+  console.log(myEnv);
   dotenvExpand(myEnv);
 
   return true;

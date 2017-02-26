@@ -6,17 +6,14 @@ import colors  from 'colors';
 import webpack from 'webpack';
 import devWebpackConfig from '../../webpack/webpack.config.dev';
 import chokidar from 'chokidar';
+import dotenv from 'dotenv';
 
 import {
   renderPage,
   renderDevPage
 } from './ssr';
 
-// ENV
-import {getDotenv} from '../universal/utils/dotenv';
-
-// Import .env and expand variables: Sets process.env[VARS] as a side-effect.
-getDotenv();
+dotenv.config();
 
 const PROD = process.env.NODE_ENV === 'production';
 const app = express();

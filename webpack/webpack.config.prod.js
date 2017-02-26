@@ -3,12 +3,10 @@ import webpack from 'webpack';
 import qs from 'querystring';
 import autoprefixer from 'autoprefixer';
 import AssetsPlugin from 'assets-webpack-plugin';
+import dotenv from 'dotenv';
 
-// ENV
-import {getDotenv} from '../src/universal/utils/dotenv.js';
+dotenv.config();
 
-// Import .env and expand variables: Sets process.env[VARS] as a side-effect.
-getDotenv();
 
 const root = process.cwd();
 const src  = path.join(root, 'src');
