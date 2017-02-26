@@ -3,7 +3,7 @@ import {Router} from 'react-router';
 import routes from '../universal/routes/index';
 
 // Global CSS
-import 'universal/styles/global.less';
+import '../universal/styles/global.less';
 
 
 class Root extends Component {

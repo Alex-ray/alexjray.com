@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "NODE_PATH=./src NODE_ENV=development node ./src/server/server.babel.js",
+    "prod": "NODE_PATH=./src NODE_ENV=production node ./src/server/server.babel.js",
     "build": "npm run build:client && npm run build:server",
     "build:server": "NODE_ENV=production webpack --config ./webpack/server.babel.js",
     "build:client": "NODE_ENV=production webpack --config ./webpack/prod.babel.js"
@@ -18,13 +19,14 @@
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-react-transform": "^2.0.2",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
-    "babel-polyfill": "^6.13.0",
+    "babel-polyfill": "^6.23.0",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.14.0",
     "css-loader": "^0.26.1",
+    "extract-text-webpack-plugin": "^2.0.0",
     "file-loader": "^0.10.0",
     "less": "^2.7.2",
     "less-loader": "^2.2.3",

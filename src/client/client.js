@@ -13,7 +13,7 @@ const {
 
 //  routing is currently regular JS object
 const initialState = iMap([
-  ['routing', routing],
+  ['routing', routing]
 ]);
 
 

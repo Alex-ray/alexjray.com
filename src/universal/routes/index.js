@@ -14,13 +14,12 @@ export default (store) => {
   return {
     component: AppContainer,
     onEnter: (prevState, nextState) => {
-      if (window) {
+      if (typeof window !== "undefined") {
         setTimeout(() => {window.scrollTo(0, 0)}, 0);
       }
     },
     onChange: (prevState, nextState) => {
-      console.log('window scroll')
-      if (window) {
+      if (typeof window !== "undefined") {
         window.scrollTo(0, 0);
       }
     },

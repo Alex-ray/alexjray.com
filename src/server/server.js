@@ -13,7 +13,6 @@ import {
 } from './ssr';
 
 const PROD = process.env.NODE_ENV === 'production';
-
 const app = express();
 
 // Production settings

@@ -97,7 +97,7 @@ class HeaderSpinner extends Component {
 
   componentWillUnmount () {
     this.stop = true;
-    if (this.timeout && window) {
+    if (this.timeout && typeof window !== "undefined") {
       window.clearTimeout(this.timeout);
     }
   }

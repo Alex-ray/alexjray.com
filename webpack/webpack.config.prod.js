@@ -46,7 +46,7 @@ export default {
   context: src,
   entry: {
     app: ['babel-polyfill', 'client/client.js'],
-    vendor
+    vendor: vendor
   },
   output: {
     filename: '[name]_[chunkhash].js',
@@ -66,7 +66,7 @@ export default {
   plugins: [
    new webpack.NamedModulesPlugin(),
    new webpack.optimize.CommonsChunkPlugin({
-     names: ['vendor', 'manifest'],
+     names: ['manifest'], /* BUG: https://github.com/AngularClass/angular2-webpack-starter/issues/456 'vendor',*/
      minChunks: Infinity
    }),
    new webpack.optimize.AggressiveMergingPlugin(),

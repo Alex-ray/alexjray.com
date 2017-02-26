@@ -19,7 +19,7 @@ class ScrollWrapper extends Component {
   }
 
   componentDidMount () {
-    if (this.props.onScrollDimensions && window) {
+    if (this.props.onScrollDimensions && typeof window !== "undefined") {
       let body = window.document.body;
       let html = window.document.documentElement;
       let height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );

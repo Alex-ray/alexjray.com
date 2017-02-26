@@ -31,13 +31,13 @@ import {
 
 const TITLES = [
   'Web Developer',
-  'Design Nerd',
   'Rock Climber',
-  'Friend',
-  'Snowboarder',
+  'Design Nerd',
   'Environmentalist',
-  'Digtal Nomad',
+  'Digital Nomad',
+  'Engineer',
   'Artist',
+  'Stoic',
   'Dreamer'
 ];
 

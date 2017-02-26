@@ -49,6 +49,7 @@ class Html extends Component {
        <head>
          <meta charSet="utf-8"/>
          <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Averia+Serif+Libre:300,400,400i,700|Poppins:300,400,500" rel="stylesheet" />
+         {PROD && <link rel="stylesheet" href="/static/prerender.css" type="text/css" />}
          <title>{title}</title>
        </head>
        <body>
