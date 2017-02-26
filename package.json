@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run prod",
     "dev": "NODE_PATH=./src NODE_ENV=development node ./src/server/server.babel.js",
-    "prod": "NODE_PATH=./src NODE_ENV=production node ./src/server/server.babel.js",
+    "prod": "node src/server/server.babel.js",
     "deploy:assets": "gulp --require babel-register --gulpfile ./Gulpfile.js upload",
     "build": "npm run build:client && npm run build:server",
     "build:server": "NODE_ENV=production webpack --config ./webpack/server.babel.js",
