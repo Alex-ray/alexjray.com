@@ -1,6 +1,10 @@
 {
   "name": "alexjray.com",
   "version": "1.0.0",
+  "engines": {
+    "node": "7.5.0",
+    "npm": "4.1.2"
+  },
   "description": "Portolio for Alexander J Ray",
   "main": "index.js",
   "scripts": {
