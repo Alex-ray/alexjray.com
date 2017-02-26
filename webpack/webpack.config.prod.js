@@ -2,8 +2,13 @@ import path from 'path';
 import webpack from 'webpack';
 import qs from 'querystring';
 import autoprefixer from 'autoprefixer';
-
 import AssetsPlugin from 'assets-webpack-plugin';
+
+// ENV
+import {getDotenv} from '../src/universal/utils/dotenv.js';
+
+// Import .env and expand variables: Sets process.env[VARS] as a side-effect.
+getDotenv();
 
 const root = process.cwd();
 const src  = path.join(root, 'src');
@@ -52,7 +57,7 @@ export default {
     filename: '[name]_[chunkhash].js',
     chunkFilename: '[name]_[chunkhash].js',
     path: build,
-    publicPath: '/static/'
+    publicPath: process.env['STATIC_ASSETS_DIR']
   },
   resolve: {
     extensions: ['.js'],

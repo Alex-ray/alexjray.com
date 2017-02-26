@@ -9,7 +9,6 @@ const src  = path.join(root, 'src');
 const clientSrc    = path.join(src, 'client');
 const universalSrc = path.join(src, 'universal');
 
-
 const clientInclude = [clientSrc, universalSrc];
 
 const cssLoaderConfig  = {
@@ -17,7 +16,6 @@ const cssLoaderConfig  = {
   importLoaders: 1,
   localIdentName: '[name]_[local]_[hash:base64:5]'
 };
-
 
 const babelQuery = {
   "env": {
