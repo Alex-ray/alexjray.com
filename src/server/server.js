@@ -75,7 +75,17 @@ if (PROD) {
 
 const server = http.createServer(app);
 
-server.listen(process.env['PORT'], function() {
+var PORT = process.ENV ? process.ENV.PORT : 8080;
+
+if (PROD) {
+  console.log(`>>>> PRODUCTION`.green);
+} else {
+  console.log(`>>>> DEVELOPMENT`.yellow);
+}
+
+console.log('listening to port : ', PORT);
+
+server.listen(PORT, function() {
    const address = server.address();
-   console.log(`${'>>>'.cyan} ${'Listening on:'.rainbow} ${'localhost::'.trap.magenta}${`${address.port}`.green}`);
+   console.log(`${'>>>'.cyan} ${'Listening on:'.rainbow} PORT: ${address.port}`);
  });
