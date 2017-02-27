@@ -3,10 +3,7 @@
   "description": "",
   "repository": "https://github.com/alex-ray/alexjray.com",
   "scripts": {
-    "dokku": {
-      "predeploy": "",
-      "postdeploy": ""
-    }
+    "dokku": {}
   },
   "env": {
     "NODE_PATH": {
