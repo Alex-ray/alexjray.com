@@ -77,17 +77,9 @@ const server = http.createServer(app);
 
 var PORT = process.env['PORT'] || 8080;
 
-
-console.log('env port : ', process.env['PORT']);
-if (PROD) {
-  console.log(`>>>> PRODUCTION`.green);
-} else {
-  console.log(`>>>> DEVELOPMENT`.yellow);
-}
-
-console.log('listening to port : ', PORT);
-
 server.listen(PORT, function() {
    const address = server.address();
-   console.log(`${'>>>'.cyan} ${'Listening on:'.rainbow} PORT: ${address.port}`);
+   const envLog = '>>>>' + PROD ? 'PRODUCTION' : 'DEVELOPMENT';
+
+   console.log(`${envLog.yellow} ${'>>>'.cyan} ${'Listening on:'.rainbow} PORT: ${address.port}`);
  });
