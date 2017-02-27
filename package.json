@@ -8,7 +8,7 @@
   "description": "Portolio for Alexander J Ray",
   "main": "index.js",
   "scripts": {
-    "start": "npm run prod",
+    "start": "node app.js",
     "dev": "NODE_PATH=./src NODE_ENV=development node ./src/server/server.babel.js",
     "prod": "node src/server/server.babel.js",
     "deploy:assets": "gulp --require babel-register --gulpfile ./Gulpfile.js upload",
