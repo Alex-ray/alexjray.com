@@ -13,6 +13,8 @@ import {
   renderDevPage
 } from './ssr';
 
+console.log('env', process.env, process.ENV);
+
 dotenv.config();
 
 const PROD = process.env.NODE_ENV === 'production';
