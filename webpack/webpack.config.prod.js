@@ -68,7 +68,7 @@ export default {
   plugins: [
    new webpack.NamedModulesPlugin(),
    new webpack.optimize.CommonsChunkPlugin({
-     names: ['manifest', 'vendor'], /* BUG: https://github.com/AngularClass/angular2-webpack-starter/issues/456 'vendor',*/
+     names: ['vendor', 'manifest'],
      minChunks: Infinity
    }),
    new webpack.optimize.AggressiveMergingPlugin(),
