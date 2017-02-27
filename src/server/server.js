@@ -13,8 +13,6 @@ import {
   renderDevPage
 } from './ssr';
 
-console.log('env', process.env, process.ENV);
-
 dotenv.config();
 
 const PROD = process.env.NODE_ENV === 'production';
@@ -77,7 +75,7 @@ if (PROD) {
 
 const server = http.createServer(app);
 
-var PORT = process.ENV ? process.ENV.PORT : 8080;
+var PORT = process.env['DOKKU_NGINX_PORT'] || 8080;
 
 if (PROD) {
   console.log(`>>>> PRODUCTION`.green);
