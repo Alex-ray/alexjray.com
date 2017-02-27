@@ -1,3 +1,9 @@
+@import '~universal/styles/variables.less';
+
 .container {
   width: 60%;
+
+  @media @mobile-portrait, @mobile-landscape {
+    width: 80%;
+  }
 }

@@ -14,8 +14,7 @@ import {
 } from 'universal/styles/layout.less';
 
 import {
-  container,
-  copyRight
+  container
 } from './footer.less';
 
 function cacheRef (_this, name) {

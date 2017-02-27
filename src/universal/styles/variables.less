@@ -1,4 +1,4 @@
-@base: 10px;
+@base: 0.7rem;//10px;
 
 @header-font-family: 'Poppins', 'sans-serif';
 @body-font-family: 'Averia Serif Libre', 'serif';
@@ -20,3 +20,18 @@
 @z-index-2: 2;
 @z-index-3: 3;
 @z-index-4: 4;
+
+// Media Query Break Points
+// ------------------------
+@mobile-portrait-max-width: 479;
+@mobile-landscape-min-width: @mobile-portrait-max-width + 1;
+@mobile-landscape-max-width: 767;
+@tablet-portrait-min-width: @mobile-landscape-max-width + 1;
+@tablet-portrait-max-width: 979;
+@desktop-min-width: @tablet-portrait-max-width + 1;
+
+@mobile-portrait: ~"(max-width: @{mobile-portrait-max-width}px)";
+@mobile-landscape: ~"(min-width: @{mobile-landscape-min-width}px) and (max-width: @{mobile-landscape-max-width}px)";
+@tablet-portrait: ~"(min-width: @{tablet-portrait-min-width}px) and (max-width: @{tablet-portrait-max-width}px)";
+@desktop: ~"(min-width: @{desktop-min-width}px)";
+@retina-screen: ~"(-webkit-min-device-pixel-ratio: 1.5)";

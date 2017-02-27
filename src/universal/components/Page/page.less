@@ -8,12 +8,21 @@
 
   padding-left: 5*@base;
   padding-right: 5*@base;
+
+  @media @mobile-portrait, @mobile-landscape {
+    padding-left: 2.5*@base;
+    padding-right: 2.5*@base;
+  }
 }
 
 .contentWrapper {
   padding-top: 10*@base;
   padding-bottom: 5*@base;
   display: flex;
+
+  @media @mobile-portrait, @mobile-landscape {
+    display: block;
+  }
 }
 
 .titleType {
@@ -33,6 +42,10 @@
   margin: 0 auto;
   margin-top: 5*@base;
   padding-left: 2.5*@base;
+
+  @media @mobile-portrait, @mobile-landscape {
+    padding-left: 0;
+  }
 
   ul {
     padding-top: 1.5*@base;
