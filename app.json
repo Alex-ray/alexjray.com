@@ -2,9 +2,6 @@
   "name": "alexjray.com",
   "description": "",
   "repository": "https://github.com/alex-ray/alexjray.com",
-  "scripts": {
-    "dokku": {}
-  },
   "env": {
     "NODE_PATH": {
       "description": "A secret key for verifying the integrity of signed cookies.",
@@ -18,10 +15,5 @@
       "description": "The application environment to run in.",
       "value": "https://s3-us-west-1.amazonaws.com/alexjray.com/"
     }
-  },
-  "buildpacks": [
-    {
-      "url": "https://github.com/heroku/heroku-buildpack-nodejs"
-    }
-  ]
+  }
 }
