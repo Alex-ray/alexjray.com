@@ -37,7 +37,6 @@ function renderApp(res, store, assets, renderProps) {
 }
 
 export const renderPage = (req, res) => {
-  console.log('renderpage ');
   const store = createStore( );
 
   const makeRoutes = require('../../build/prerender');
