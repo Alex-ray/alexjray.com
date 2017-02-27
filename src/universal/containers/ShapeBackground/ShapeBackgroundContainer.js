@@ -53,7 +53,7 @@ class ShapeBackgroundContainer extends Component {
 
 
     if (updateHeight || updateWidth) {
-      setShapes(15, width, height);
+      setShapes(width, height);
     }
 
   }

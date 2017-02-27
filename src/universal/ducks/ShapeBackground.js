@@ -49,19 +49,19 @@ function getRandomShape() {
 }
 
 
-function generateShapes(limit, maxWidth, maxHeight) {
+function generateShapes(maxWidth, maxHeight) {
   let shapes = [];
 
   // Not sure what this means.... 🤔
-  let spread = 200;
+  let spread = 150;
 
   const sampler = poissonDiscSampler(maxWidth, maxHeight, spread);
 
-  for (var i = 0; i < limit; i++) {
+  let sample = [];
+  while (sample = sampler()) {
     let degree    = getRandomDegree();
     let color     = getRandomColor();
-    let position  = sampler() || [];
-    let cordinates = {x: position[0] , y: position[1]};
+    let cordinates = {x: sample[0] , y: sample[1]};
     let shape = getRandomShape();
 
     let shapeConfig = {
@@ -73,6 +73,7 @@ function generateShapes(limit, maxWidth, maxHeight) {
 
     shapes.push(shapeConfig);
   }
+
 
   return shapes;
 }
@@ -110,8 +111,8 @@ export const setShapeDimensions = (dispatch) => {
 }
 
 export const setShapes = (dispatch) => {
-  return (limit, maxWidthPosition, maxHeightPosition) => {
-    let shapes = generateShapes(limit, maxWidthPosition, maxHeightPosition)
+  return (maxWidthPosition, maxHeightPosition) => {
+    let shapes = generateShapes(maxWidthPosition, maxHeightPosition)
     dispatch({
       type: SHAPE_BACKGROUND_SET_SHAPES,
       shapes: shapes
