@@ -11,7 +11,7 @@ import dotenv from 'dotenv';
 import {
   renderPage,
   renderDevPage
-} from './ssr';
+} from './ssr.js';
 
 dotenv.config();
 
