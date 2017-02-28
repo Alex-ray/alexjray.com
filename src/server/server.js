@@ -1,6 +1,7 @@
 import http    from 'http';
 import express from 'express';
 import colors  from 'colors';
+import emojiFavicon from 'emoji-favicon';
 
 // Development Libraries
 import webpack from 'webpack';
@@ -17,6 +18,8 @@ dotenv.config();
 
 const PROD = process.env.NODE_ENV === 'production';
 const app = express();
+
+app.use(emojiFavicon('wave'));
 
 // Production settings
 if (PROD) {

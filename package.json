@@ -54,6 +54,7 @@
     "colors": "^1.1.2",
     "dotenv": "^4.0.0",
     "dotenv-expand": "^0.1.0",
+    "emoji-favicon": "^0.3.0",
     "express": "^4.14.1",
     "immutable": "^3.8.1",
     "react": "^15.4.2",
