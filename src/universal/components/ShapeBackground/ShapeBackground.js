@@ -25,6 +25,7 @@ class ShapeBackground extends Component {
     const {
       shapes,
       scrollHeight,
+      shapeOffset,
       offset: {
         x,
         y
@@ -52,7 +53,7 @@ class ShapeBackground extends Component {
     }
 
     let styles = {
-      'transform': `translate3d(0px, ${diff}px, 0)`
+      'transform': `translate3d(${shapeOffset.x}px, ${shapeOffset.y+diff}px, 0)`
     };
 
     return (

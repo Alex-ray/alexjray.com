@@ -40,7 +40,7 @@ class FooterContainer extends Component {
     let isInView = (clientBottomPosition >= topOffset+50);
 
     if (visible !== isInView) {
-      setVisibility(visible);
+      setVisibility(isInView);
     }
   }
 };

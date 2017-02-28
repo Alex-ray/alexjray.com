@@ -36,10 +36,12 @@ class HeaderContainer extends Component {
 };
 
 function mapStateToProps (state, ownProps) {
+  let footerVisible = state.getIn(['footer', 'visible']);
+  let hideGuide = (footerVisible && ownProps.fixed);
 
   return {
     fixed: ownProps.fixed,
-    hideGuide: state.getIn(['footer', 'visible'])
+    hideGuide: hideGuide
   };
 }
 

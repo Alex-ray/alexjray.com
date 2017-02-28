@@ -41,8 +41,10 @@ export default function reducer(state = initialState, action = { }) {
     case WINDOW_MOUSE_SET_OFFSETS:
       return state.merge({
         mouse: {
-          x: action.x,
-          y: action.y
+          offsets: {
+            x: action.x,
+            y: action.y
+          }
         }
       });
     default:

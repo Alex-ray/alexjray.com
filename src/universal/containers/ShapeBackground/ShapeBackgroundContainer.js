@@ -34,10 +34,11 @@ class ShapeBackgroundContainer extends Component {
       height,
       width,
       shapes,
-      setDimensions
+      setDimensions,
+      shapeOffset
     } = this.props;
 
-    return (<ShapeBackground setDimensions={setDimensions} shapes={shapes} offset={{x: x, y: y}} scrollWidth={width} scrollHeight={height} />);
+    return (<ShapeBackground setDimensions={setDimensions} shapes={shapes} offset={{x: x, y: y}} scrollWidth={width} scrollHeight={height} shapeOffset={shapeOffset}/>);
   }
 
   componentDidUpdate (prevProps) {
@@ -68,10 +69,24 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps (state) {
   let offset = state.getIn(['window', 'scroll', 'offsets']).toJS();
   let shapes = state.getIn(['shapeBackground', 'shapes']).toJS();
+
+  let mouseOffset  = state.getIn(['window', 'mouse', 'offsets']).toJS();
+  let windowWidth  = state.getIn(['window', 'width']);
+  let windowHeight = state.getIn(['window', 'height']);
+
+
+  let center = {x: windowWidth/2, y: windowHeight/2};
+
+  let xRatio = ((mouseOffset.x - center.x)/center.x);
+  let yRatio = ((mouseOffset.y - center.y)/center.y);
+
+  const shapeOffset = {x: xRatio*10, y: yRatio*10};
+
   return {
     height: state.getIn(['shapeBackground', 'height']),
     width: state.getIn(['shapeBackground', 'width']),
     shapes: shapes,
+    shapeOffset: shapeOffset,
     x: offset.x,
     y: offset.y
   };
