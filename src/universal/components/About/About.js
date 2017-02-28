@@ -1,6 +1,7 @@
 // Libraries
 import React, {Component, PropTypes} from 'react';
 import classNames from 'classnames';
+import DocumentTitle from 'react-document-title';
 
 // Components
 import Page from 'universal/components/Page/Page.js';
@@ -18,6 +19,7 @@ class About extends Component {
   render () {
     return (
       <Page className={centerContent}>
+      <DocumentTitle title={'About | Alexander J Ray'}>
        <ul className={aboutList}>
         <li>
         Motto
@@ -67,6 +69,7 @@ class About extends Component {
           </ul>
         </li>
        </ul>
+      </DocumentTitle>
       </Page>
     );
   }

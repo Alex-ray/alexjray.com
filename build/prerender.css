@@ -161,12 +161,12 @@ a {
 }
 @media (max-width: 479px) {
   .table-of-contents_container_1_16n {
-    width: 80%;
+    width: 85%;
   }
 }
 @media (min-width: 479 + 1px) and (max-width: 767px) {
   .table-of-contents_container_1_16n {
-    width: 80%;
+    width: 85%;
   }
 }
 .foot-notes_container_HUqLR {

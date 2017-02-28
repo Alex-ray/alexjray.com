@@ -10,6 +10,7 @@ import FooterContainer     from 'universal/containers/Footer/FooterContainer.js'
 // Components
 import Footer from 'universal/components/Footer/Footer.js';
 import Logo from 'universal/components/Logo/Logo.js';
+import DocumentTitle from 'react-document-title';
 
 // Styles
 import {
@@ -59,27 +60,29 @@ class Page extends Component {
     let bulletList = bullets ? this.getBullets(bullets) : [];
 
     return (
-      <section>
-        <HeaderContainer fixed/>
-        <div className={classNames(content, className)}>
-          <div className={contentWrapper}>
-            <div>
-              <Title title={title} />
-              <a className={titleLink} href={linkSrc}>{linkSrc}</a>
-            </div>
-            <div className={flexContent}>
-              {children}
+      <DocumentTitle title={`${title + ' | Alexander J Ray' || 'Alexander J Ray'}`}>
+        <section>
+          <HeaderContainer fixed/>
+          <div className={classNames(content, className)}>
+            <div className={contentWrapper}>
+              <div>
+                <Title title={title} />
+                <a className={titleLink} href={linkSrc}>{linkSrc}</a>
+              </div>
+              <div className={flexContent}>
+                {children}
 
-              {bullets ? <span className={bottomContentBorder}>...............</span> : null}
+                {bullets ? <span className={bottomContentBorder}>...............</span> : null}
 
-              <ul className={bottomTagList}>{bulletList}</ul>
+                <ul className={bottomTagList}>{bulletList}</ul>
+              </div>
+              <Logo bottom />
             </div>
-            <Logo bottom />
           </div>
-        </div>
-        <GuidePopUpContainer />
-        <FooterContainer enableScrollListener/>
-      </section>
+          <GuidePopUpContainer />
+          <FooterContainer enableScrollListener/>
+        </section>
+      </DocumentTitle>
     );
   }
 };

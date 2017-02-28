@@ -75,10 +75,15 @@ function mapStateToProps (state) {
   let windowHeight = state.getIn(['window', 'height']);
 
   let gyro  = state.getIn(['window', 'gyro']).toJS();
+
   let xRatio = 0;
   let yRatio = 0;
+  let maxOffset = 10;
 
   if (gyro.tiltX && gyro.tiltY) {
+    maxOffset = 15;
+    maxOffset = 15;
+
     let center = {x: 180/2, y: 360/2};
 
     xRatio = ((gyro.tiltX - center.x)/center.x);
@@ -90,7 +95,7 @@ function mapStateToProps (state) {
     yRatio = ((mouseOffset.y - center.y)/center.y);
   }
 
-  const shapeOffset = {x: xRatio*10, y: yRatio*10};
+  const shapeOffset = {x: xRatio*maxOffset, y: yRatio*maxOffset};
 
   return {
     height: state.getIn(['shapeBackground', 'height']),

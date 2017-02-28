@@ -1,7 +1,8 @@
 import React, {Component, PropTypes} from 'react';
 import {Provider} from 'react-redux';
 import {RouterContext} from 'react-router';
-import {renderToString} from 'react-dom-stream/server';
+import {renderToString} from 'react-dom/server';
+import DocumentTitle from 'react-document-title';
 
 class Html extends Component {
   static propTypes = {
@@ -15,7 +16,6 @@ class Html extends Component {
     const PROD = process.env.NODE_ENV === 'production';
 
     const {
-      title,
       store,
       assets,
       renderProps
@@ -40,9 +40,13 @@ class Html extends Component {
      **/
     const root = PROD && renderToString(
       <Provider store={store}>
-        <RouterContext {...renderProps}/>
+        <DocumentTitle>
+          <RouterContext {...renderProps}/>
+        </DocumentTitle>
       </Provider>
     );
+
+    let title = DocumentTitle.rewind();
 
     return (
      <html>
@@ -51,7 +55,7 @@ class Html extends Component {
          <meta name="viewport" content="width=device-width" />
          <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Averia+Serif+Libre:300,400,400i,700|Poppins:300,400,500" rel="stylesheet" />
          {PROD && <link rel="stylesheet" href="/static/prerender.css" type="text/css" />}
-         <title>{title}</title>
+         <title>{title || 'Alexander J Ray'}</title>
        </head>
        <body>
          <script dangerouslySetInnerHTML={{__html: initialState}} />

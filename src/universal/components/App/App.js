@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import DocumentTitle           from 'react-document-title';
 
 // Containers
 import WindowWrapperContainer from 'universal/containers/WindowWrapper/WindowWrapperContainer.js'
@@ -24,6 +25,7 @@ class App extends Component {
 
     return (
       <WindowWrapperContainer>
+        <DocumentTitle title='Alexander J Ray'>
         <ReactCSSTransitionGroup
            component="div"
             transitionName={ {
@@ -41,6 +43,7 @@ class App extends Component {
              key: location.pathname
            })}
          </ReactCSSTransitionGroup>
+        </DocumentTitle>
       </WindowWrapperContainer>
     );
   }
