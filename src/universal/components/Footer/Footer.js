@@ -5,7 +5,6 @@ import classNames from 'classnames';
 // Components
 import TableOfContents from 'universal/components/TableOfContents/TableOfContents.js';
 import FootNotes       from 'universal/components/FootNotes/FootNotes.js';
-import ScrollWrapper   from 'universal/components/ScrollWrapper/ScrollWrapper.js';
 
 // Styles
 import {
@@ -17,6 +16,8 @@ import {
   container
 } from './footer.less';
 
+
+// TODO: Abstract out into component utility
 function cacheRef (_this, name) {
   return (ref) => {
     _this[name] = ref;
@@ -26,40 +27,28 @@ function cacheRef (_this, name) {
 const CONTAINER_EL = 'CONTAINER_EL';
 
 class Footer extends Component {
-  static propTypes = {
-    enableScrollListener: PropTypes.bool,
-    setScrollState: PropTypes.func.isRequired
-  };
+  static propTypes = {};
 
-  handleScroll = (event, y, x) => {
-    const {
-      setScrollState
-    } = this.props;
-
-    if (!this[CONTAINER_EL]) return false;
-
+  componentDidMount ( ) {
     let clientHeight = this[CONTAINER_EL].clientHeight;
-    let offsetTop    = this[CONTAINER_EL].offsetTop + 50;
-    let clientBottomPosition = clientHeight + y ;
-    let isInView = (clientBottomPosition >= offsetTop);
+    let clientWidth  = this[CONTAINER_EL].clientWidth;
+    let offsetTop    = this[CONTAINER_EL].offsetTop;
 
-    setScrollState(isInView);
+    this.props.setDimensions({
+      height: clientHeight,
+      width: clientWidth,
+      offset: {
+        top: offsetTop
+      }
+    });
   }
 
   render () {
-    const {
-      enableScrollListener
-    } = this.props;
-
-    const onWindowScroll = enableScrollListener ? this.handleScroll : null;
-
     return (
-      <ScrollWrapper onWindowScroll={onWindowScroll}>
-        <div ref={cacheRef(this, CONTAINER_EL) } className={classNames(container, fullScreen, centerContent)}>
-          <TableOfContents />
-          <FootNotes />
-        </div>
-      </ScrollWrapper>
+      <div ref={cacheRef(this, CONTAINER_EL) } className={classNames(container, fullScreen, centerContent)}>
+        <TableOfContents />
+        <FootNotes />
+      </div>
     );
   }
 }

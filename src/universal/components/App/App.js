@@ -2,6 +2,9 @@ import React, {Component, PropTypes} from 'react';
 
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
+// Containers
+import WindowWrapperContainer from 'universal/containers/WindowWrapper/WindowWrapperContainer.js'
+
 // Styles
 import {
   enter,
@@ -20,25 +23,25 @@ class App extends Component {
     } = this.props;
 
     return (
-      <div>
-      <ReactCSSTransitionGroup
-         component="div"
-          transitionName={ {
-            enter: enter,
-            enterActive: enterActive,
-            leave: leave,
-            leaveActive: leaveActive,
-            appear: appear,
-            appearActive: appearActive
-          } }
-         transitionEnterTimeout={500}
-         transitionLeaveTimeout={500}
-       >
-         {React.cloneElement(children, {
-           key: location.pathname
-         })}
-       </ReactCSSTransitionGroup>
-      </div>
+      <WindowWrapperContainer>
+        <ReactCSSTransitionGroup
+           component="div"
+            transitionName={ {
+              enter: enter,
+              enterActive: enterActive,
+              leave: leave,
+              leaveActive: leaveActive,
+              appear: appear,
+              appearActive: appearActive
+            } }
+           transitionEnterTimeout={500}
+           transitionLeaveTimeout={500}
+         >
+           {React.cloneElement(children, {
+             key: location.pathname
+           })}
+         </ReactCSSTransitionGroup>
+      </WindowWrapperContainer>
     );
   }
 }

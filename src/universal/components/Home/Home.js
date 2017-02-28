@@ -9,8 +9,7 @@ import ShapeBackgroundContainer from 'universal/containers/ShapeBackground/Shape
 import FooterContainer          from 'universal/containers/Footer/FooterContainer.js';
 
 // Components
-import HeaderSpinner   from 'universal/components/HeaderSpinner/HeaderSpinner.js';
-import ScrollWrapper   from 'universal/components/ScrollWrapper/ScrollWrapper.js';
+import HeaderSpinner from 'universal/components/HeaderSpinner/HeaderSpinner.js';
 
 import Logo from 'universal/components/Logo/Logo.js';
 
@@ -42,22 +41,15 @@ const TITLES = [
 ];
 
 class Home extends Component {
-  static propTypes = {
-    setScrollOffsets: PropTypes.func.isRequired
-  };
-
-  handleScrollEvent = (event, y, x) => {
-    this.props.setScrollOffsets({x, y});
-  }
+  static propTypes = {};
 
   render () {
     return (
-      <ScrollWrapper onWindowScroll={this.handleScrollEvent} >
         <div>
           <div className={shapeBackgroundContainer}>
             <div className={shapeBackgroundContent}>
               <HeaderContainer />
-              <div onClick={this.handleClick} className={classNames(fullScreen, centerContent)}>
+              <div className={classNames(fullScreen, centerContent)}>
                 <HeaderSpinner titles={TITLES} delay={1750}/>
                 <Logo bottom />
               </div>
@@ -69,7 +61,6 @@ class Home extends Component {
           <FooterContainer enableScrollListener={false} />
           <GuidePopUpContainer />
         </div>
-      </ScrollWrapper>
     );
   }
 }

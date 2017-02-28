@@ -1,14 +1,14 @@
 import {combineReducers} from 'redux-immutablejs';
 import {routing}         from './routing.js';
 import guidePopUp        from './guidePopUp.js';
-import scroll            from './scroll.js';
+import window            from './window.js';
 import footer            from './footer.js';
 import shapeBackground   from './shapeBackground.js';
 
 const currentReducers = {
   routing,
   guidePopUp,
-  scroll,
+  window,
   footer,
   shapeBackground
 };

@@ -10,22 +10,15 @@ import Home from 'universal/components/Home/Home.js';
 // Ducks
 import {
   setScrollOffsets
-} from 'universal/ducks/Scroll.js';
-
+} from 'universal/ducks/Window.js';
 
 @connect(mapStateToProps, mapDispatchToProps)
 class HomeContainer extends Component {
-  static propTypes = {
-    setScrollOffsets: PropTypes.func.isRequired,
-  };
+  static propTypes = {};
 
   render () {
-    const {
-      setScrollOffsets,
-    } = this.props;
-
     return (
-      <Home setScrollOffsets={setScrollOffsets} />
+      <Home  />
     );
   }
 };
@@ -35,9 +28,7 @@ function mapStateToProps (state) {
 }
 
 function mapDispatchToProps (dispatch) {
-  return {
-    setScrollOffsets: setScrollOffsets(dispatch)
-  };
+  return {};
 }
 
 export default HomeContainer;

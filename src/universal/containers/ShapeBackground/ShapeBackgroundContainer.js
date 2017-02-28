@@ -15,7 +15,6 @@ import {
 
 const REF_SHAPE_BACKGROUND = 'REF_SHAPE_BACKGROUND';
 
-
 @connect(mapStateToProps, mapDispatchToProps)
 class ShapeBackgroundContainer extends Component {
   static propTypes = {
@@ -67,7 +66,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps (state) {
-  let offset = state.getIn(['scroll', 'offsets']).toJS();
+  let offset = state.getIn(['window', 'scroll', 'offsets']).toJS();
   let shapes = state.getIn(['shapeBackground', 'shapes']).toJS();
   return {
     height: state.getIn(['shapeBackground', 'height']),
