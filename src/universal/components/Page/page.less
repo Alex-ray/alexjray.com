@@ -9,7 +9,12 @@
   padding-left: 5*@base;
   padding-right: 5*@base;
 
-  @media @mobile-portrait, @mobile-landscape {
+  @media @mobile-portrait {
+    padding-left: 2.5*@base;
+    padding-right: 2.5*@base;
+  }
+
+  @media @mobile-landscape {
     padding-left: 2.5*@base;
     padding-right: 2.5*@base;
   }
@@ -20,7 +25,11 @@
   padding-bottom: 5*@base;
   display: flex;
 
-  @media @mobile-portrait, @mobile-landscape {
+  @media @mobile-portrait {
+    display: block;
+  }
+
+  @media @mobile-landscape {
     display: block;
   }
 }
@@ -43,7 +52,11 @@
   margin-top: 5*@base;
   padding-left: 2.5*@base;
 
-  @media @mobile-portrait, @mobile-landscape {
+  @media @mobile-portrait {
+    padding-left: 0;
+  }
+
+  @media @mobile-landscape {
     padding-left: 0;
   }
 

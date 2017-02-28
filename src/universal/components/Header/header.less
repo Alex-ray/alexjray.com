@@ -18,7 +18,13 @@
   justify-content: space-between;
   transition: opacity 250ms ease-in-out;
 
-  @media @mobile-portrait, @mobile-landscape {
+  @media @mobile-portrait {
+    padding-left: 2.5*@base;
+    padding-right: 2.5*@base;
+    padding-top: 2.5*@base;
+  }
+
+  @media @mobile-landscape {
     padding-left: 2.5*@base;
     padding-right: 2.5*@base;
     padding-top: 2.5*@base;

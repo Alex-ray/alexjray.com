@@ -48,6 +48,7 @@ class Html extends Component {
      <html>
        <head>
          <meta charSet="utf-8"/>
+         <meta name="viewport" content="width=device-width" />
          <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Averia+Serif+Libre:300,400,400i,700|Poppins:300,400,500" rel="stylesheet" />
          {PROD && <link rel="stylesheet" href="/static/prerender.css" type="text/css" />}
          <title>{title}</title>

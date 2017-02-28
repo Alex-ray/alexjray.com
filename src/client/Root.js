@@ -1,9 +1,14 @@
 import React, {Component, PropTypes} from 'react';
 import {Router} from 'react-router';
 import routes from '../universal/routes/index';
+import viewportUnitsBuggyfill from 'viewport-units-buggyfill';
 
 // Global CSS
 import '../universal/styles/global.less';
+
+if (process.env.__CLIENT__) {
+  viewportUnitsBuggyfill.init();
+}
 
 
 class Root extends Component {

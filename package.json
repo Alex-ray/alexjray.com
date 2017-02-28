@@ -12,6 +12,7 @@
     "dev": "NODE_PATH=./src NODE_ENV=development node ./src/server/server.babel.js",
     "staging": "NODE_PATH=./src NODE_ENV=production npm run prod",
     "prod": "node src/server/server.babel.js",
+    "deploy": " git add --all . && git commit -m 'Adds new build files' && npm run deploy:assets && git push production master",
     "deploy:assets": "gulp --require babel-register --gulpfile ./Gulpfile.js upload",
     "build": "npm run build:client && npm run build:server",
     "build:server": "NODE_ENV=production webpack --config ./webpack/server.babel.js",
@@ -65,6 +66,7 @@
     "react-router-redux": "^4.0.8",
     "redux": "^3.6.0",
     "redux-immutablejs": "0.0.8",
+    "viewport-units-buggyfill": "^0.6.0",
     "webpack": "^2.2.1"
   }
 }

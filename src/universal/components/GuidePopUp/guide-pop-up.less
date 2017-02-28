@@ -35,7 +35,12 @@
     color: @red;
   }
 
-  @media mobile-portrait, @mobile-landscape {
+  @media @mobile-portrait {
+    top: 2.5*@base;
+    right: 2.5*@base;
+  }
+
+  @media @mobile-landscape {
     top: 2.5*@base;
     right: 2.5*@base;
   }
