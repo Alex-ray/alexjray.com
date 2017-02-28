@@ -9,7 +9,8 @@ import {connect} from 'react-redux';
 import {
   setScroll,
   setMouse,
-  setWindowDimensions
+  setWindowDimensions,
+  setGyro
 } from 'universal/ducks/Window.js';
 
 // Components
@@ -20,7 +21,8 @@ class WindowWrapperContainer extends Component {
   static propTypes = {
     handleScroll: PropTypes.func.isRequired,
     handleOnMouseMove: PropTypes.func.isRequired,
-    handleWindowDimensions: PropTypes.func.isRequired
+    handleWindowDimensions: PropTypes.func.isRequired,
+    handleGyro: PropTypes.func.isRequired
   };
 
   render () {
@@ -37,7 +39,8 @@ function mapDispatchToProps (dispatcher) {
   return {
     handleScroll: setScroll(dispatcher),
     handleOnMouseMove: setMouse(dispatcher),
-    handleWindowDimensions: setWindowDimensions(dispatcher)
+    handleWindowDimensions: setWindowDimensions(dispatcher),
+    handleGyro: setGyro(dispatcher)
   };
 }
 export default WindowWrapperContainer;

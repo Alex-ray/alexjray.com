@@ -74,11 +74,21 @@ function mapStateToProps (state) {
   let windowWidth  = state.getIn(['window', 'width']);
   let windowHeight = state.getIn(['window', 'height']);
 
+  let gyro  = state.getIn(['window', 'gyro']).toJS();
+  let xRatio = 0;
+  let yRatio = 0;
 
-  let center = {x: windowWidth/2, y: windowHeight/2};
+  if (gyro.tiltX && gyro.tiltY) {
+    let center = {x: 180/2, y: 360/2};
 
-  let xRatio = ((mouseOffset.x - center.x)/center.x);
-  let yRatio = ((mouseOffset.y - center.y)/center.y);
+    xRatio = ((gyro.tiltX - center.x)/center.x);
+    yRatio = ((gyro.tiltY - center.y)/center.y);
+  } else {
+    let center = {x: windowWidth/2, y: windowHeight/2};
+
+    xRatio = ((mouseOffset.x - center.x)/center.x);
+    yRatio = ((mouseOffset.y - center.y)/center.y);
+  }
 
   const shapeOffset = {x: xRatio*10, y: yRatio*10};
 

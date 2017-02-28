@@ -4,12 +4,14 @@
 import React, {Component, PropTypes} from 'react';
 
 const HAS_WINDOW = typeof window !== "undefined";
+const HAS_GYRO = HAS_WINDOW && typeof window.DeviceOrientationEvent !== 'undefined';
 
 class WindowWrapper extends Component {
   static propTypes = {
     handleScroll: PropTypes.func,
     handleOnMouseMove: PropTypes.func,
     handleWindowDimensions: PropTypes.func,
+    handleGyro: PropTypes.func,
     children: PropTypes.any
   };
 
@@ -29,7 +31,8 @@ class WindowWrapper extends Component {
     const {
       handleWindowDimensions,
       handleScroll,
-      handleOnMouseMove
+      handleOnMouseMove,
+      handleGyro
     } = this.props;
 
     if (HAS_WINDOW) {
@@ -48,15 +51,21 @@ class WindowWrapper extends Component {
       if (handleOnMouseMove) {
         window.addEventListener("mousemove", handleOnMouseMove);
       }
-
     }
+
+    if (HAS_WINDOW && HAS_GYRO) {
+      // Listen for the event and handle DeviceOrientationEvent object
+      window.addEventListener('deviceorientation', handleGyro, false);
+    }
+
   }
 
   componentWillUnmount () {
     const {
       handleWindowDimensions,
       handleScroll,
-      handleOnMouseMove
+      handleOnMouseMove,
+      handleGyro
     } = this.props;
 
     if (HAS_WINDOW) {
@@ -67,6 +76,10 @@ class WindowWrapper extends Component {
       if (handleOnMouseMove) {
         window.removeEventListener("mousemove", handleOnMouseMove);
       }
+    }
+
+    if (HAS_WINDOW && HAS_GYRO) {
+      window.removeEventListener('deviceorientation', handleGyro, false);
     }
   }
 };

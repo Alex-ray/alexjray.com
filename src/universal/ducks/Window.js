@@ -4,6 +4,7 @@ import {push, replace} from 'react-router-redux';
 export const WINDOW_SET_DIMENSIONS     = 'WINDOW_SET_DIMENSIONS';
 export const WINDOW_SCROLL_SET_OFFSETS = 'WINDOW_SCROLL_SET_OFFSETS';
 export const WINDOW_MOUSE_SET_OFFSETS  = 'WINDOW_MOUSE_SET_OFFSETS';
+export const WINDOW_SCROLL_SET_GYRO    = 'WINDOW_SCROLL_SET_GYRO';
 
 const initialState = fromJS({
   height: 0,
@@ -19,6 +20,11 @@ const initialState = fromJS({
       x: 0,
       y: 0
     }
+  },
+  gyro: {
+    tiltX: 0,
+    tiltY: 0,
+    direction: 0
   }
 });
 
@@ -47,6 +53,14 @@ export default function reducer(state = initialState, action = { }) {
           }
         }
       });
+    case WINDOW_SCROLL_SET_GYRO:
+    return state.merge({
+      gyro: {
+        tiltX: action.tiltX,
+        tiltY: action.tiltY,
+        direction: action.direction
+      }
+    })
     default:
       return state;
   }
@@ -86,3 +100,21 @@ export const setScroll = (dispatch) => {
     });
   };
 };
+
+export const setGyro = (dispatch) => {
+  return (gyroEvent) => {
+
+    const {
+       gamma,
+       beta,
+       alpha
+    } = gyroEvent;
+
+    dispatch({
+      type: WINDOW_SCROLL_SET_GYRO,
+      tiltX: gamma,
+      tiltY: beta,
+      direction: alpha
+    });
+  }
+}
