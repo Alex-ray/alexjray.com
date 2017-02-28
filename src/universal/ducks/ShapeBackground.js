@@ -61,19 +61,18 @@ function generateShapes(maxWidth, maxHeight) {
   while (sample = sampler()) {
     let degree    = getRandomDegree();
     let color     = getRandomColor();
-    let cordinates = {x: sample[0] , y: sample[1]};
+    let coordinates = {x: sample[0] , y: sample[1]};
     let shape = getRandomShape();
 
     let shapeConfig = {
       color: color,
-      shape: shape,
+      type: shape,
       degree: degree,
-      cordinates: cordinates
+      coordinates: coordinates
     };
 
     shapes.push(shapeConfig);
   }
-
 
   return shapes;
 }

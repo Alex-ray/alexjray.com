@@ -79,7 +79,7 @@ var PORT = process.env['PORT'] || 8080;
 
 server.listen(PORT, function() {
    const address = server.address();
-   const envLog = '>>>>' + PROD ? 'PRODUCTION' : 'DEVELOPMENT';
+   const envLog = (PROD ? 'PRODUCTION' : 'DEVELOPMENT');
 
    console.log(`${envLog.yellow} ${'>>>'.cyan} ${'Listening on:'.rainbow} PORT: ${address.port}`);
  });

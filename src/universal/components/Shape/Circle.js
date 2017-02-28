@@ -2,15 +2,13 @@
 import React, {Component, PropTypes} from 'react';
 import classNames from 'classnames';
 
-import Shape from 'universal/Components/Shape/Shape.js';
-
 import {
   circleShape,
   circleHalf,
   circleOutline
 } from './shapes.less';
 
-class Circle extends Shape {
+class Circle extends Component {
   static propTypes = {
     outline: PropTypes.bool,
     half: PropTypes.bool,

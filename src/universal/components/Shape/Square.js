@@ -2,15 +2,13 @@
 import React, {Component, PropTypes} from 'react';
 import classNames from 'classnames';
 
-import Shape from 'universal/Components/Shape/Shape.js'
-
 import {
   squareShape,
   squareOutline,
   squareHalf
 } from './shapes.less';
 
-class Square extends Shape {
+class Square extends Component {
   static propTypes = {
     outline: PropTypes.bool,
     half: PropTypes.bool,
@@ -38,7 +36,7 @@ class Square extends Shape {
     let styles = {
       top: y+'px',
       left: x+'px',
-      transform: `rotate(${degree}deg)` 
+      transform: `rotate(${degree}deg)`
     };
 
     if (outline) {
