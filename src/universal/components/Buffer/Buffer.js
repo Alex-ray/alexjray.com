@@ -31,13 +31,12 @@ class Buffer extends Component {
           <div className={description}>
             <h2 className={subTitle}>Remote Product Engineer -</h2>
             <p>
-              In addition to my daily roles as a product engineer I also,
+              In addition to my daily responsibilties as a Buffer for Business product engineer, fixing bugs, responding to customer tickets and owning product features.
 
-              Lead migration from Backbon.js to Wepback, React and Redux.
-
-              Helped rebuild the Buffer for Business adminster dashboard utilizing technologies such as PHP, React, Webpack and CSS Modules.
-
-              Completely re-built the Buffer for Business Twitter Analytics from the ground up using React, Redux, Webpack, Highcharts, PHP and twitters data API, Gnip.
+              I also helped lead the migration from a Backbone.js architeture to a fully modern Webpack, React and Redux front end.
+            </p>
+            <p>
+              Most recently I helped rethink and rebuild two core Buffer for Business products. The Organization Admin and Business Analytics..
             </p>
           </div>
 

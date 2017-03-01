@@ -28,7 +28,7 @@ class RedInteractive extends Component {
         <div className={description}>
           <h2 className={subTitle}>Web Developer - </h2>
           <p>
-            Collaborated with clients, creatives and project managers to take websites from concept to production using our in house built CMS Scarlet (django, python) and Emberjs
+            Collaborated with clients, creatives and project managers to take websites from concept to production using our in house built CMS Scarlet (django, python) and Ember.js
           </p>
         </div>
 
