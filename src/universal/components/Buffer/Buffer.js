@@ -1,9 +1,6 @@
 // Libraries
 import React, {Component, PropTypes} from 'react';
-import ReactPlayer from 'react-player';
-
-
-
+import ResponsiveEmbed from 'react-responsive-embed';
 // Components
 import Page from 'universal/components/Page/Page.js';
 import IMac   from 'universal/components/IMac/IMac.js';
@@ -20,13 +17,12 @@ import {
 // Images
 import screenImage from 'universal/../images/buffer/overview-analytics.png';
 
-// Video
-import overviewAnalyticsVideo from 'universal/../videos/buffer/overview-analytics.mov';
-
 class Buffer extends Component {
   render () {
     return (
-      <Page title={'Buffer'} linkSrc={'https://buffer.com'} bullets={['PHP', 'MongoDB', 'Node.js', 'JavaScript', 'React', 'Redux', 'Webpack', 'CSSModules', 'LESS']}>
+      <Page title={'Buffer'}
+            linkSrc={'https://buffer.com'}
+            bullets={['PHP', 'MongoDB', 'Node.js', 'JavaScript', 'React', 'Redux', 'Webpack', 'CSSModules', 'LESS']}>
         <div className={styledContent}>
           <div className={description}>
             <h2 className={subTitle}>Remote Product Engineer -</h2>
@@ -42,8 +38,12 @@ class Buffer extends Component {
 
           <div className={media}>
             <IMac image={screenImage}/>
-            <ReactPlayer className={mediaVideo} url={"https://youtu.be/jqDQDbcf1Cc"}  youtubeConfig={{playerVars: {modestbranding: 1, showinfo: 0}}} />
-            <ReactPlayer className={mediaVideo} url={"https://youtu.be/LeHMbG4gm5I"}  youtubeConfig={{playerVars: {modestbranding: 1, showinfo: 0}}} />
+            <div className={mediaVideo}>
+              <ResponsiveEmbed src={"https://www.youtube.com/embed/jqDQDbcf1Cc?autoplay=0&playsinline=1&showinfo=0&rel=0&iv_load_policy=3&controls=0&start=0&origin=http%3A%2F%2Flocalhost%3A3000&modestbranding=1&enablejsapi=1&widgetid=1"}/>
+            </div>
+            <div className={mediaVideo}>
+              <ResponsiveEmbed src={"https://www.youtube.com/embed/LeHMbG4gm5I?autoplay=0&playsinline=1&showinfo=0&rel=0&iv_load_policy=3&controls=0&start=0&origin=http%3A%2F%2Flocalhost%3A3000&modestbranding=1&enablejsapi=1&widgetid=1"}/>
+            </div>
           </div>
 
         </div>

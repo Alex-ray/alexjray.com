@@ -27,21 +27,21 @@ class CK12 extends Component {
         linkSrc='http://ck12.org'
         bullets={['Web', 'Python', 'Backbone.js', 'Grunt.js', 'D3.js', 'LESS']}>
         <div className={styledContent}>
-        <div className={description}>
-          <h2 className={subTitle}>Front End Engineer -</h2>
-          <p>
-            In addition to vetting front-end technologies and brainstorm about new products I helped develop two key products for CK 12.
-          </p>
-          <p>
-            The first was a intrenal analytics platform to help visualize and measure key metrics about the CK 12 platform.
+          <div className={description}>
+            <h2 className={subTitle}>Front End Engineer -</h2>
+            <p>
+              In addition to vetting front-end technologies and brainstorm about new products I helped develop two key products for CK 12.
+            </p>
+            <p>
+              The first was a intrenal analytics platform to help visualize and measure key metrics about the CK 12 platform.
 
-            The second and more ambitious project was a Disqus like chat platform for students to ask, answer and vote for questions.
-          </p>
-        </div>
+              The second and more ambitious project was a Disqus like chat platform for students to ask, answer and vote for questions.
+            </p>
+          </div>
 
-        <div className={media}>
-          <IMac image={chatUiImage}/>
-        </div>
+          <div className={media}>
+            <IMac image={chatUiImage}/>
+          </div>
 
         </div>
       </Page>
