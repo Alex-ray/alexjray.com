@@ -12,7 +12,7 @@ import {
   mid,
   part,
   bot,
-  image
+  image as imageClass
 } from './i-phone.less';
 
 class IPhone extends Component {
@@ -32,7 +32,7 @@ class IPhone extends Component {
               images={[image]}
               autoResolveDelay={3000}
             >
-              {loader}
+              <img className={imageClass} src={image} />
             </Preload>
           </div>
           </div>

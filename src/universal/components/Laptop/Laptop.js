@@ -7,7 +7,7 @@ import {
   main,
   inner,
   body,
-  image,
+  image as imageClass,
   top,
   bottom
 } from './laptop.less';
@@ -29,9 +29,8 @@ class Laptop extends Component {
             <Preload
               loadingIndicator={loader}
               images={[image]}
-              autoResolveDelay={3000}
             >
-              {loader}
+              <img className={imageClass} src={image} />
             </Preload>
           </div>
         </div>

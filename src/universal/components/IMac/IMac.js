@@ -14,7 +14,7 @@ import {
   mid,
   part,
   bot,
-  image
+  image as imageClass
 } from './i-mac.less';
 
 function getVideoEl (videoSrc) {
@@ -29,7 +29,9 @@ function getImageEl (imageSrc) {
       images={[imageSrc]}
       onError={() => {console.log('error')}}
       autoResolveDelay={3000}
-    >{loader}</Preload>
+    >
+      <img className={imageClass} src={imageSrc} />
+    </Preload>
   )
 }
 
