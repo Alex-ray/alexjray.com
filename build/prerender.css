@@ -631,7 +631,8 @@ a {
 .page_subTitle_3kWi- {
   font-size: 18px;
 }
-.page_description_3PXdp p {
+.page_description_3PXdp p,
+.page_description_3PXdp li {
   font-family: 'Open Sans';
   font-weight: 300;
   font-size: 17px;
@@ -849,6 +850,12 @@ a {
 }
 .laptop_inner_2EQcT {
   display: block;
+  background: #222222;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 .laptop_body_2Fi4c {
   display: block;
@@ -941,6 +948,12 @@ a {
 }
 .i-phone_hold_apQOQ .i-phone_inner_1PXz- {
   display: block;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #222222;
 }
 .i-phone_hold_apQOQ .i-phone_sub_2qvYX {
   display: block;
