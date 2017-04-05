@@ -1,6 +1,7 @@
 // Libraries
 import React, {Component, PropTypes} from 'react';
 import ResponsiveEmbed from 'react-responsive-embed';
+
 // Components
 import Page from 'universal/components/Page/Page.js';
 import IMac   from 'universal/components/IMac/IMac.js';

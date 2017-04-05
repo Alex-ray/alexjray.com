@@ -30,15 +30,15 @@ class Addvocate extends Component {
               using cutting edge techonolgies.
 
               Specifically I helped implement the following front end aritectures.
-
-              <ul>
-                <li>Completely asychronous architecture.</li>
-                <li>Real time updates over the wire (long polling).</li>
-                <li>Client Side caching and data managment.</li>
-                <li>Universal JavaScript (JS rendered on the client as well as the server).</li>
-                <li>Blazing fast UI animations and render times.</li>
-              </ul>
             </p>
+
+            <ul>
+              <li>Completely asychronous architecture.</li>
+              <li>Real time updates over the wire (long polling).</li>
+              <li>Client Side caching and data managment.</li>
+              <li>Universal JavaScript (JS rendered on the client as well as the server).</li>
+              <li>Blazing fast UI animations and render times.</li>
+            </ul>
           </div>
 
           <div className={media}>

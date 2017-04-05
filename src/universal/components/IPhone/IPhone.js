@@ -1,5 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import classNames from 'classnames';
+import Preload     from 'react-preload';
+import ImageLoading from 'universal/components/ImageLoading/ImageLoading.js';
 
 import {
   hold,
@@ -15,11 +17,23 @@ import {
 
 class IPhone extends Component {
   render () {
+    const loader = (<ImageLoading />);
+
+    const {
+      image
+    } = this.props;
+
     return (
       <div className={classNames(hold, this.props.className)}>
         <div className={main}>
           <div className={inner}>
-            <img className={image} src={this.props.image}/>
+            <Preload
+              loadingIndicator={loader}
+              images={[image]}
+              autoResolveDelay={3000}
+            >
+              {loader}
+            </Preload>
           </div>
           </div>
           <div className={sub}>

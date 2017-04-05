@@ -5,6 +5,7 @@ import viewportUnitsBuggyfill from 'viewport-units-buggyfill';
 
 // Global CSS
 import '../universal/styles/global.less';
+import 'loaders.css/loaders.min.css';
 
 if (process.env.__CLIENT__) {
   viewportUnitsBuggyfill.init();

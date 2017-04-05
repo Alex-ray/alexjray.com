@@ -1,6 +1,8 @@
 // Libraries
 import React, {Component, PropTypes} from 'react';
 import ReactPlayer from 'react-player';
+import Preload     from 'react-preload';
+import ImageLoading from 'universal/components/ImageLoading/ImageLoading.js';
 
 // Styles
 import {
@@ -20,7 +22,15 @@ function getVideoEl (videoSrc) {
 }
 
 function getImageEl (imageSrc) {
-  return (<img className={image} src={imageSrc}/>)
+  const loader = (<ImageLoading />);
+  return (
+    <Preload
+      loadingIndicator={loader}
+      images={[imageSrc]}
+      onError={() => {console.log('error')}}
+      autoResolveDelay={3000}
+    >{loader}</Preload>
+  )
 }
 
 

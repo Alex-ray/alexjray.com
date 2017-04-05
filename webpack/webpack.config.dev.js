@@ -80,22 +80,33 @@ export default {
 
       // CSS
       {
-       test: /\.(css|less)$/,
+        test: /\.css$/,
+        // include: clientInclude,
+        use: [
+          {loader: 'style-loader'},
+          {loader: 'css-loader'},
+          {loader: 'postcss-loader', options: {plugins: [autoprefixer]}}
+        ]
+      },
+
+      {
+       test: /\.less$/,
        include: clientInclude,
        use: [
-         'style-loader',
+         {loader: 'style-loader'},
          {
            loader: 'css-loader',
            options: cssLoaderConfig
-         },{
+         },
+         {
            loader: 'postcss-loader',
            options: {
              plugins: [autoprefixer]
            }
          },
-         'less-loader'
+         { loader: 'less-loader'}
        ]
-     }
+     },
     ]
   }
 };

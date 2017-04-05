@@ -1,3 +1,5 @@
+@import '~universal/styles/variables.less';
+
 .hold {
   width: 100px;
 }
@@ -48,6 +50,12 @@
 }
 .hold .inner {
   display: block;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: @black;
 }
 .hold .sub {
   display: block;

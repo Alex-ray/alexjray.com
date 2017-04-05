@@ -91,6 +91,15 @@ export default {
 
      // CSS
      {
+       test: /\.css$/,
+       use: [
+         {loader: 'style-loader'},
+         {loader: 'css-loader'},
+         {loader: 'postcss-loader', options: {plugins: [autoprefixer]}}
+       ]
+     },
+
+     {
        test: /\.(css|less)$/,
        include: clientInclude,
        use:[

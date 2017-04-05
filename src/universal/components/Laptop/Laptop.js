@@ -1,4 +1,6 @@
 import React, {Component, PropTypes} from 'react';
+import Preload     from 'react-preload';
+import ImageLoading from 'universal/components/ImageLoading/ImageLoading.js';
 
 import {
   container,
@@ -10,13 +12,27 @@ import {
   bottom
 } from './laptop.less';
 
+
+
 class Laptop extends Component {
   render () {
+    const loader = (<ImageLoading />);
+
+    const {
+      image
+    } = this.props;
+
     return (
       <div className={container}>
         <div className={main}>
           <div className={inner}>
-            <img className={image} src={this.props.image}/>
+            <Preload
+              loadingIndicator={loader}
+              images={[image]}
+              autoResolveDelay={3000}
+            >
+              {loader}
+            </Preload>
           </div>
         </div>
         <div className={body}>
