@@ -54,7 +54,7 @@ class Html extends Component {
          <meta charSet="utf-8"/>
          <meta name="viewport" content="width=device-width" />
          <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Averia+Serif+Libre:300,400,400i,700|Poppins:300,400,500" rel="stylesheet" />
-         {PROD && <link rel="stylesheet" href="/static/prerender.css" type="text/css" />}
+         {PROD && <link rel="stylesheet" href={app.css} type="text/css" />}
          <title>{title || 'Alexander J Ray'}</title>
        </head>
        <body>

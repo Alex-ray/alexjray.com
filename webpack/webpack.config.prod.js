@@ -5,6 +5,8 @@ import autoprefixer from 'autoprefixer';
 import AssetsPlugin from 'assets-webpack-plugin';
 import dotenv from 'dotenv';
 
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+
 dotenv.config();
 
 const root = process.cwd();
@@ -67,6 +69,7 @@ export default {
   },
   plugins: [
    new webpack.NamedModulesPlugin(),
+   new ExtractTextPlugin('[name]_[chunkhash].css'),
    new webpack.optimize.CommonsChunkPlugin({
      names: ['vendor', 'manifest'],
      minChunks: Infinity
@@ -102,17 +105,17 @@ export default {
      {
        test: /\.(css|less)$/,
        include: clientInclude,
-       use:[
-         'style-loader',
+       use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: [
          {loader: 'css-loader', options: cssLoaderConfig},
          {
            loader: 'postcss-loader',
-           options: {
-             plugins: [autoprefixer]
-           }
+           options: { plugins: [autoprefixer] }
          },
-         'less-loader'
-       ]
+         'less-loader',
+       ],
+     }),
      },
 
      // JS
