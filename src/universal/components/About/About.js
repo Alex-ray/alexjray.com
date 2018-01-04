@@ -1,5 +1,6 @@
 // Libraries
 import React, {Component, PropTypes} from 'react';
+import { Link } from 'react-router';
 import classNames from 'classnames';
 import DocumentTitle from 'react-document-title';
 
@@ -36,23 +37,24 @@ class About extends Component {
         <li>
         Previously
           <ul>
-            <li><a href='https://buffer.com'>Buffer</a></li>
-            <li><a href='https://ffffff.com'>RED</a></li>
-            <li><a href='https://addvocate.com'>Addvocate</a></li>
-            <li><a href='https://ck12.org'>CK 12</a></li>
+            <li><Link to='gramercy'>Gramercy</Link></li>
+            <li><Link to='buffer'>Buffer</Link></li>
+            <li><Link to='red'>RED</Link></li>
+            <li><Link to='addvocate'>Addvocate</Link></li>
+            <li><Link to='ck12'>CK 12</Link></li>
           </ul>
         </li>
         <li>
           Expertise
           <ul>
-            <li>JavaScript, Node.js</li>
-            <li>React, Redux, Ember.js</li>
-            <li>Webpack, Grunt, Gulp</li>
-            <li>HTML, CSS</li>
-            <li>PHP</li>
-            <li>Ruby (on Rails)</li>
+            <li>ES6, JavaScript, Node.js, Express</li>
+            <li>React, Redux, RXjs, Ember.js</li>
+            <li>Webpack, Grunt, Gulp, Babel</li>
+            <li>HTML, CSS, LESS, SASS</li>
+            <li>PHP, Ruby (on Rails)</li>
             <li>Python, Django</li>
             <li>Docker, Kubernetes</li>
+            <li>Postgres, Mongodb, Knex, SQL</li>
             <li>Git</li>
             <li>Adobe, Sketch, Pencil & Paper</li>
           </ul>

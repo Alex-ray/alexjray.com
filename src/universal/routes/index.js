@@ -5,6 +5,7 @@ import AppContainer from 'universal/containers/App/AppContainer.js';
 import home           from './home.js';
 import about          from './about.js';
 import buffer         from './buffer.js';
+import gramercy       from './gramercy.js';
 import redInteractive from './redInteractive.js';
 import addvocate      from './addvocate.js';
 import ck12           from './ck12.js';
@@ -29,7 +30,8 @@ export default (store) => {
       buffer(store),
       redInteractive(store),
       addvocate(store),
-      ck12(store)
+      ck12(store),
+      gramercy(store),
       // stash(store)
     ]
   }

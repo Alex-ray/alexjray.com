@@ -52,8 +52,11 @@ class ShapeBackground extends Component {
       shapeEls.push((<Shape key={i} type={type} x={x} y={y} color={color} degree={degree} />));
     }
 
+    let offsetX = (shapeOffset.x ) * (shapeOffset.x/3)
+    let offsetY = ((shapeOffset.y) * (shapeOffset.y/3))+diff;
+
     let styles = {
-      'transform': `translate3d(${shapeOffset.x}px, ${shapeOffset.y+diff}px, 0)`
+      'transform': `translate3d(${offsetX}px, ${offsetY}px, 0)`
     };
 
     return (

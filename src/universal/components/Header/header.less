@@ -43,17 +43,18 @@
 }
 
 .headerLink {
-  .link;
-  font-size: 16px;
+  margin-top: -3px;
+  border-bottom: solid 3px;
+  border-color: transparent;
+
+  &:hover {
+    border-bottom: solid 3px;
+    border-color: @black;
+  }
+
+  font-size: 18px;
   font-family: @header-font-family;
   font-weight: lighter;
 }
 
-.headerNameLink {
-  .headerLink;
-  border-bottom: none;
-
-  &:hover {
-    border-bottom: none;
-  }
-}
+.headerNameLink { .headerLink; }

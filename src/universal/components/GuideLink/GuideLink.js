@@ -1,4 +1,5 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
 
 class GuideLink extends Component {
   static propTypes = {
@@ -14,9 +15,9 @@ class GuideLink extends Component {
   render () {
 
     return (
-      <a href="#" onClick={this.handleClick} className={this.props.className}>
+      <Link to="/about" className={this.props.className}>
         Guide
-      </a>
+      </Link>
     );
   }
 }
